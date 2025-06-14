@@ -1,0 +1,413 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: left; 
+  font-family: 'Cabin', sans-serif;
+  font-size: 30px;
+  color: #333;
+}
+
+
+h2 {
+  color: #000000;
+  font-size: 23px;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  min-height: 100vh;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+  
+}
+/* Cabecera fija para móviles */
+.topbar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f4f4f4;
+  color: #000;
+  padding: 10px 20px;
+  z-index: 999;
+ 
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.toplogo a {
+  text-decoration: none;
+}
+
+.topbar-title {
+  font-size: 25px;
+  text-align: center;
+  margin-top: 5px;
+    
+font-family: "La Belle Aurore", cursive;
+  font-weight: 400;
+  font-style: normal;
+  
+}
+
+#topbar-toggle {
+  font-size: 22px;
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+}
+
+.contenido {
+  margin-left: 250px;
+  margin-top: 30px;
+  padding: 30px 40px;
+  width: auto;
+  box-sizing: border-box;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+.llamada {
+  background-color: #f9f9f9;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.boton-contacto {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #8ba085;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Mostrar topbar solo en móvil cuando sidebar está oculta */
+@media (max-width: 768px) {
+  .topbar {
+    display: flex;
+  }
+
+  .sidebar.visible ~ .topbar {
+    display: none;
+  }
+
+ .contenido {
+    margin-left: 0;
+    margin-top: 60px;
+    padding: 20px;
+    width: 100%;
+  }
+  }
+
+.sidebar {
+  width: 250px;
+  background-color: #f4f4f4;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  transition: transform 0.3s ease-in-out;
+  z-index: 100;
+}
+
+.toplogo {
+  margin-top: 60px;
+}
+
+.logo img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.logo h1 {
+  font-family: 'Cabin', sans-serif;
+  font-size: 22px;
+  color: #333;
+}
+
+.logo p {
+  font-size: 14px;
+  color: #777;
+}
+
+.menu ul {
+  list-style: none;
+}
+
+.menu li {
+  margin: 10px 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: normal;
+}
+
+.menu a.activo {
+  font-weight: bold;
+  color: #000000;
+}
+
+.sidebar-footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.social a {
+  margin: 0 5px;
+  font-size: 18px;
+  color: #555;
+}
+
+.toggle-btn {
+  width: 50px;
+  height: 50px;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 20px;
+  background-color: rgba(244, 244, 244, 0);
+  color: #000000;
+  border: none;
+  padding: 10px;
+  font-size: 22px;
+  z-index: 1000;
+  border-radius: 100%;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+  
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.visible {
+    transform: translateX(0);
+  }
+
+  .toggle-btn {
+    display: block;
+  }
+    .cerrar-menu {
+    display: block;
+  }
+    .sidebar.visible .cerrar-menu {
+    display: block;
+  }
+}
+
+/* 🔹 Botón para cerrar menú lateral */
+.cerrar-menu {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  z-index: 101;
+}
+
+/* Contenido */
+/* Introductorio de serie */
+.serie {
+  margin-bottom: 150px;
+}
+.serie h2{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color:  #f4f4f4;
+  padding: 10px;
+  width: 100%;
+  border-radius: 20px;
+  
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 30;
+  font-style: normal;
+  
+  background-color:  #8ba085;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+}
+
+.intro-serie p {
+  width: 90%;
+  text-align: justify;
+ font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  
+  margin: 0 auto 15px auto; /* centra el párrafo */
+
+}
+
+.intro-serie {
+  display: flex;
+  justify-content: center; /* centra horizontalmente el contenido */
+  align-items: center;
+  margin: 0 auto 40px auto; /* margen arriba y abajo, centrado automático */
+  text-align: center; /* centra el texto */
+  padding: 0 20px; /* espacio lateral para móviles */
+  flex-direction: column; /* asegura vertical en lugar de lado a lado */
+  width: 100%;
+    /*max-width: 900px;*/
+}
+
+
+
+.intro-serie div {
+  flex: 1;
+  width: 100%;
+}
+
+/* Galerías con orden*/
+.galeriaorden {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.galeriaorden img {
+  width: calc(25% - 15px);
+  height: auto;
+  object-fit: contain;
+  background-color: #f3f3f3;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .galeriaorden img {
+    width: calc(33.33% - 15px);
+  }
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+  .galeriaorden img {
+    width: calc(50% - 15px);
+  }
+}
+
+/* Móvil muy pequeño */
+@media (max-width: 480px) {
+  .galeriaorden img {
+    width: 100%;
+  }
+}
+
+/* Galerías sin orden*/
+  .galeria {
+  column-count: 4;
+  column-gap: 15px;
+}
+
+.galeria img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  display: block;
+  break-inside: avoid;
+  background-color: #f3f3f3;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+  
+  @media (max-width: 1024px) {
+  .galeria {
+    column-count: 3;
+  }
+}
+@media (max-width: 768px) {
+  .galeria {
+    column-count: 2;
+  }
+}
+@media (max-width: 480px) {
+  .galeria {
+    column-count: 1;
+  }
+}
+
+/* Modal */
+    
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#modal img {
+  max-width: 90%;
+  max-height: 80vh;
+  margin-bottom: 10px;
+}
+
+#pie-foto {
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+
+#cerrar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+/*Flechas galería*/
+.modal-arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+  user-select: none;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 50%;
+}
+
+#prev {
+  left: 20px;
+}
+
+#next {
+  right: 20px;
+}
+

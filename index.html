@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neus López</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/6333bcf80a.js" crossorigin="anonymous"></script>
+  <link rel="icon" href="img/logo.png" type="image/png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Gotu&family=La+Belle+Aurore&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Ms+Madi&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css"/>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   
+
+</head>
+<body>
+<!-- Cabecera fija para móviles -->
+<div class="topbar" id="topbar">
+  <span id="topbar-toggle">☰</span>
+  <span class="topbar-title">Neus López</span>
+</div>
+
+ <aside class="sidebar" id="sidebar">
+
+  <!-- 🔹 Botón para cerrar el menú (solo se ve en móvil) -->
+  <button id="cerrar-menu" class="cerrar-menu">✕</button>
+
+  <div class="toplogo">
+    <div class="logo" ><a href="index.html" >
+        <img src="img/logo.png" alt="Logo Neus López" />
+        <h1>Neus López</h1>
+        <p>Artista Plástica</p>
+       </a></div>
+    </div>
+
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html" class="activo">Inicio</a></li>
+        <li><a href="#sobremi">Sobre mí</a></li>
+        <li><a href="#contact">Contacto</a></li>
+        <li><a href="obras.html">Obras</a></li>
+        <li><a href="encargos.html">Encargos</a></li>
+        <li><a href="paredes.html">Murales</a></li>
+        <li><a href="eventos.html">Arte para eventos</a></li>
+        <li><a href="https://byneuslopez.etsy.com"  target="_blank">Tienda</a></li>
+    
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="social">
+        <a href="https://www.instagram.com/by.neuslopez/" target="blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/neus.lopez.353" target="blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.tiktok.com/@by.neuslopez" target="blank"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://t.me/byneuslopez" target="blank"><i class="fa-brands fa-telegram"></i></a>
+       <a href="https://www.youtube.com/@By.neuslopez" target="blank"><i class="fa-brands fa-youtube"></i></a>
+   
+      </div>
+      <p class="copyright">© Neus López 2025</p>
+    </div>
+  </aside>
+  
+<div class="contenido">
+
+  
+<!-- Modal de vídeo personalizado -->
+<div class="video-modal" id="video-modal">
+  <div class="video-wrapper">
+    <span class="cerrar-modal" id="cerrar-video">&times;</span>
+    <iframe
+      id="iframe-video"
+      src="https://www.youtube.com/embed/INc1SumqqOY?si=HQs3GaCYaOMfhuhH" 
+      title="YouTube video player"
+      allowfullscreen
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+    </iframe>
+  </div>
+</div>
+    <!-- Video Modal End -->
+
+<section class="bloque-header" id="home">
+  <div class="header-contenedor">
+    <div class="header-imagen">
+    </div>
+    <div class="header-texto">
+      <h1 class="nombre">Neus López</h1>
+       <h3>Artista plástica</h3>
+      <div class="botones-header">
+        <a href="img/docs/cv.pdf" class="boton-descarga" download>Descargar CV</a>
+         <h5 class="play-texto">Ver vídeo</h5>
+        <button class="btn-play" id="abrir-video" aria-label="Abrir vídeo" title="Ver vídeo">
+        <span></span></button>
+ 
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- 🔹 Presentación con imagen -->
+  <section class="presentacion" id="sobremi">
+    <div class="bio-imagen">
+      <img src="img/fotoperfil.png" alt="Foto de Neus López" class="foto-perfil">
+      <div class="bio-texto">
+        <h2>Sobre mí</h2>
+        <p><i>Neus López Pérez (Valencia, 2003)</i></p>
+        <p>¡Hola! Soy Neus, artista plástica.</p>
+        <p>Desde pequeña siempre he sido una persona curiosa con inquietudes muy diversas pero siempre he tenido claro que mi camino era el arte. Soy de Aspe, un pueblo de la provincia de Alicante aunque actualmente estudio Bellas Artes en Valencia,
+         una etapa que estoy disfrutando mucho tanto a nivel personal como creativo.</p>
+         <p>También he tenido la oportunidad de realizar un curso de erasmus en la ATU en Galway, Irlanda, donde aprendí a mirar al arte con otros ojos.</p>
+        <p>Actualmente me estoy especializando en la rama de pintura pero sigo explorando todo tipo de técnicas para enriquecer mi obra. Soy una persona muy apasionada y trabajadora que siempre está buscando nuevas oportunidades para seguir creciendo profesional y artísticamente.</p>
+      </div>
+    </div>
+  </section>
+<!--
+/**ESTUDIOS**/
+-->
+
+<section class="seccion-qualificacion" id="qualification">
+
+  <div class="qualificacion-titulo" >
+    <h1 class="titulo-fondo">Trayectoria</h1>
+    <h2 class="titulo-frontal">Trayectoria</h2>
+  </div>
+
+  <div class="trayectoria-contenedor">
+    <div class="columna-qualificacion">
+       <h2>Formación:</h2>
+      <!-- 🔹 Formación desplegable -->
+  <div class="bloque">
+    <div class="formacion-header">
+     <button class="formacion-btn"><span class="flecha">▼</span></button>
+      <h3>Artística</h3>
+       </div>
+    <div class="formacion-contenido">
+      <ul>
+        <li><strong>2022 - Actualidad:</strong> Grado en Bellas Artes (UPV)</li>
+        <li><strong>2025:</strong> Workshop Jose Luis Ceña (Jávea)</li>
+        <li><strong>2024:</strong> Workshop Natalia Segovia (Escuela P.Carrión, Elche)</li>
+        <li><strong>2023: </strong> Curso pintura y composición, Pilar López Báez (Online)</li>
+        <li><strong>2022:</strong> Cerámica en Plou Estudi (Valencia)</li>
+        <li><strong>2021: </strong> Taller mural (Doble13, Petrer)</li>
+        <li><strong>2018: </strong> Curso fotografía (Novelda)</li>
+      </ul>
+    </div>
+  </div>
+     
+       <div class="bloque">
+    <div class="formacion-header">
+    <button class="formacion-btn"><span class="flecha">▼</span></button>
+   <h3>Otras Competencias</h3>
+     </div>
+    <div class="formacion-contenido">
+      <p><strong>Idiomas:</strong></p>
+      <ul>
+        <li>Español: Nativo</li>
+        <li>Inglés: B2</li>
+        <li>Valenciano: Básico</li>
+      </ul>
+      <p><strong>Otros:</strong></p>
+      <ul>
+        <li>Paquete Adobe</li>
+        <li>Diseño web</li>
+        <li>Manejo de vinilos</li>
+      </ul>
+    </div>
+  </div>
+      </div>
+  
+
+    <div class="columna-qualificacion">
+      <h2>Experiencia:</h2>
+        <div class="bloque">
+    <div class="formacion-header">
+      <button class="formacion-btn"><span class="flecha">▼ </span></button>
+    <h3>Premios y Concursos</h3>
+    </div>
+    <div class="formacion-contenido">
+     <p><strong>Premios:</strong></p>
+      <ul>
+        <li>1º Premio pintura gran formato, Alfafara (2025)</li>
+        <li>Premio local certamen pintura rápida, Aspe  (2024)</li>
+        <li>1º Premio pintura gran formato, Alfafara (2024)</li>
+      </ul>
+      </div>
+  </div>
+    
+     <!-- 🔹 Entrevistas desplegable -->
+  <div class="bloque">
+    <div class="formacion-header">
+      <button class="formacion-btn"><span class="flecha">▼</span></button>
+    <h3>Entrevistas y artículos</h3>
+    </div>
+    <div class="formacion-contenido">
+      <ul>
+        <li>🎙️ Entrevista: Un ratico con Joaquín (2025)</li>
+        <li>🎙️ Artículo premio Aspe</li>
+         </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+       
+</section>
+
+
+        <!--Servicios--> 
+<section class="seccion-servicios" id="service">
+  <div class="servicios-titulo">
+    <h2 class="titulo-frontal">Qué encontrarás aqui:</h2>
+  </div>
+
+  <div class="servicios-grid">
+    <div class="servicio">
+      <div class="servicio-cabecera">
+        <div class="icono">🖼️</div>
+        <h4>Obras originales</h4>
+      </div>
+      <p>Visita mi portfolio, allí podrás encontrar una selección de lo que hago y mis series de cuadros.</p>
+      <a href="obras.html" class="enlace-servicio">Ver más</a>
+    </div>
+
+    <div class="servicio">
+      <div class="servicio-cabecera">
+        <div class="icono">🎨</div>
+        <h4>Encargos</h4>
+      </div>
+      <p>Retratos, paisajes y todo tipo de motivos hechos por encargo en  distintas técnicas.</p>
+      <a href="encargos.html" class="enlace-servicio">Ver más</a>
+    </div>
+
+    <div class="servicio">
+      <div class="servicio-cabecera">
+        <div class="icono">🖌️</div>
+        <h4>Murales</h4>
+      </div>
+      <p>Visita mis proyectos en gran formato.</p>
+      <a href="paredes.html" class="enlace-servicio">Ver más</a>
+    </div>
+
+    <div class="servicio">
+      <div class="servicio-cabecera">
+        <div class="icono">🛒</div>
+        <h4>Mi tienda online</h4>
+      </div>
+      <p>Aquí podrás adquirir obras originales pero también reproducciones en forma de láminas, pegatinas e incluso imanes.</p>
+      <a href="https://byneuslopez.etsy.com" class="enlace-servicio">Ver más</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion-contacto" id="contact">
+  <div class="contacto-titulo">
+    <h1 class="titulo-fondo">Contacto</h1>
+    <h2 class="titulo-frontal">Contacto</h2>
+  </div>
+
+  <div class="formulario-contacto">
+  <form action="https://formsubmit.co/info.neuslopez@gmail.com" method="POST">
+  <input type="hidden" name="_captcha" value="false">
+  <div class="fila-formulario">
+    <input type="text" name="name" placeholder="Nombre" required>
+    <input type="email" name="email" placeholder="Tú email" required>
+  </div>
+  <input type="text" name="subject" placeholder="Asunto" required>
+  <textarea name="message" rows="5" placeholder="Mensaje" required></textarea>
+  <button type="submit" class="boton-enviar">Enviar</button>
+</form>
+  </div>
+  
+</section>
+
+<section class="seccion-rrss" >
+  <div class="redes-titulo">
+    <h2 class="titulo">También puedes encontrarme en mis redes sociales: </h2>
+  </div>
+  <div class="redes">
+    <a href="https://www.instagram.com/by.neuslopez/" target="blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/neus.lopez.353" target="blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.tiktok.com/@by.neuslopez" target="blank"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://t.me/byneuslopez" target="blank"><i class="fa-brands fa-telegram"></i></a>
+       <a href="https://www.youtube.com/@By.neuslopez" target="blank"><i class="fa-brands fa-youtube"></i></a>
+  </div>
+   <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+</section>
+    </div><script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const sidebar = document.getElementById('sidebar');
+    const topbar = document.getElementById('topbar');
+    const topbarToggle = document.getElementById('topbar-toggle');
+    const cerrarMenu = document.getElementById('cerrar-menu');
+    
+    topbarToggle.addEventListener('click', () => {
+      sidebar.classList.add('visible');
+      topbar.style.display = "none";
+    });
+
+    cerrarMenu.addEventListener('click', () => {
+      sidebar.classList.remove('visible');
+      topbar.style.display = "flex";
+    });
+
+    // Abrir/cerrar modal vídeo
+    const abrir = document.getElementById("abrir-video");
+    const cerrar = document.getElementById("cerrar-video");
+    const modal = document.getElementById("video-modal");
+    const iframe = document.getElementById("iframe-video");
+
+    abrir.addEventListener("click", () => {
+      modal.style.display = "flex";
+      iframe.src += "?autoplay=1";
+    });
+
+    cerrar.addEventListener("click", () => {
+      modal.style.display = "none";
+      iframe.src = iframe.src.replace("?autoplay=1", "");
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+        iframe.src = iframe.src.replace("?autoplay=1", "");
+      }
+    });
+
+    // Mostrar botón scroll
+    const backToTop = document.querySelector(".back-to-top");
+    window.addEventListener("scroll", function () {
+      backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+
+    document.querySelector(".back-to-top").addEventListener("click", function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Activar desplegables
+    const botones = document.querySelectorAll(".formacion-btn");
+    botones.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const bloque = btn.closest(".bloque");
+        const contenido = bloque.querySelector(".formacion-contenido");
+        const flecha = btn.querySelector(".flecha");
+
+        contenido.classList.toggle("activa");
+        btn.classList.toggle("activa");
+        flecha.classList.toggle("activa");
+      });
+    });
+
+    // Lazy loading
+    document.querySelectorAll('img:not([loading])').forEach(img => {
+      img.setAttribute('loading', 'lazy');
+    });
+
+    // Desactivar clic derecho
+    document.addEventListener('contextmenu', e => e.preventDefault());
+  });
+</script>
+
+    </body>
+</html>

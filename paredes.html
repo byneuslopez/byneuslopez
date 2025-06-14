@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Obras</title>
+  <link rel="stylesheet" href="paredes.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/6333bcf80a.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="img/logo.png" type="image/png">
+    
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Gotu&family=La+Belle+Aurore&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Ms+Madi&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+<!-- Cabecera fija para móviles -->
+<div class="topbar" id="topbar">
+  <span id="topbar-toggle">☰</span>
+  <span class="topbar-title">Neus López</span>
+</div>
+
+ <aside class="sidebar" id="sidebar">
+
+  <!-- 🔹 Botón para cerrar el menú (solo se ve en móvil) -->
+  <button id="cerrar-menu" class="cerrar-menu">✕</button>
+
+  <div class="toplogo">
+    <div class="logo" ><a href="index.html" >
+        <img src="img/logo.png" alt="Logo Neus López" />
+        <h1>Neus López</h1>
+        <p>Artista Plástica</p>
+       </a></div>
+    </div>
+
+     <nav class="menu">
+      <ul>
+        <li><a href="index.html">Volver al inicio</a></li>
+        <li><a href="predes.html" class="activo">Murales:</a></li>
+        <li><a href="#aspe">- Proyecto: (Próximamente)</a></li>
+        <li><a href="#jolly">- Proyecto: Academia de inglés</a></li>
+      </ul>
+      
+    </nav>
+    <div class="sidebar-footer">
+      <div class="social">
+        <a href="https://www.instagram.com/by.neuslopez/" target="blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/neus.lopez.353" target="blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.tiktok.com/@by.neuslopez" target="blank"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://t.me/byneuslopez" target="blank"><i class="fa-brands fa-telegram"></i></a>
+        <a href="https://www.youtube.com/@By.neuslopez" target="blank"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+      <p class="copyright">© Neus López 2025</p>
+    </div>
+  </aside>
+  <main class="contenido">
+
+  <!-- 🔹 Sección de obras -->
+  <!--
+  <h1>Murales:</h1>
+   <section class="serie" id="aspe">
+    <div class="intro-serie">
+       <div>
+        <h2>Proyecto: Aspe </h2>
+        <p>En este proyecto bla bla bla</p>
+        </div>
+    </div>
+    <div class="galeriaorden">
+    <img src="img/murales/1.jpg" alt="Fragmento 1/4" data-caption="Fragmento 1/4" >
+    <img src="img/murales/2.jpg" alt="Fragmento 2/4" data-caption="Fragmento 2/4">
+    <img src="img/murales/3.jpg" alt="Fragmento 3/4"  data-caption="Fragmento 3/4">
+    <img src="img/murales/4.jpg" alt="Fragmento 4/4"  data-caption="Fragmento 4/4">
+    </div>
+  </section>
+  -->
+
+<section class="serie" id="jolly">
+    <div class="intro-serie">
+       <div>
+        <h2>Proyecto: Mural Jolly Academy </h2>
+        <p>Para este proyecto se requería la realización de un mural ilustrativo sobre los diferentes certificados de inglés, además, buscamos integrar diferentes tipos de transportes para poder realizar dinámicas y ejercicios de vocabulario.</p>
+        </div>
+    </div>
+     <div class="galeriaorden">
+    <img src="img/murales/1.jpg" alt="Fragmento 1/4" data-caption="Fragmento 1/4" >
+    <img src="img/murales/2.jpg" alt="Fragmento 2/4" data-caption="Fragmento 2/4">
+    <img src="img/murales/3.jpg" alt="Fragmento 3/4"  data-caption="Fragmento 3/4">
+    <img src="img/murales/4.jpg" alt="Fragmento 4/4"  data-caption="Fragmento 4/4">
+    </div>
+  </section>
+  <!-- 🔹 Modal de imagen -->
+  <div id="modal" class="modal">
+    <span id="cerrar">&times;</span>
+    <img id="imagen-modal" src="" alt="">
+    <div id="pie-foto"></div>
+    <span id="prev" class="modal-arrow">&#10094;</span>
+<span id="next" class="modal-arrow">&#10095;</span>
+  </div>
+</main>
+
+
+  <script>
+  const sidebar = document.getElementById('sidebar');
+  const topbar = document.getElementById('topbar');
+  const topbarToggle = document.getElementById('topbar-toggle');
+
+  topbarToggle.addEventListener('click', () => {
+    sidebar.classList.add('visible');
+    topbar.style.display = "none";
+  });
+
+  document.getElementById('cerrar-menu').addEventListener('click', () => {
+    sidebar.classList.remove('visible');
+    topbar.style.display = "flex";
+  });
+
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('imagen-modal');
+  const pieFoto = document.getElementById('pie-foto');
+  const cerrar = document.getElementById('cerrar');
+  let imagenesGaleria = [];
+  let imagenActual = 0;
+
+  // Función para abrir imagen y guardar galería
+  function abrirImagen(e, selectorGaleria) {
+    const galeria = e.target.closest(selectorGaleria);
+    imagenesGaleria = Array.from(galeria.querySelectorAll('img'));
+    imagenActual = imagenesGaleria.indexOf(e.target);
+    mostrarImagen(imagenActual);
+  }
+
+  // Clicks para .galeria y .galeriaorden
+  document.querySelectorAll('.galeria img').forEach(img =>
+    img.addEventListener('click', e => abrirImagen(e, '.galeria'))
+  );
+
+  document.querySelectorAll('.galeriaorden img').forEach(img =>
+    img.addEventListener('click', e => abrirImagen(e, '.galeriaorden'))
+  );
+
+  function mostrarImagen(index) {
+    const img = imagenesGaleria[index];
+    if (!img) return;
+    modalImg.src = img.src;
+    pieFoto.textContent = img.dataset.caption;
+    modal.style.display = "flex";
+  }
+
+  cerrar.addEventListener('click', () => modal.style.display = "none");
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+
+  document.getElementById('prev').addEventListener('click', (e) => {
+    e.stopPropagation();
+    imagenActual = (imagenActual - 1 + imagenesGaleria.length) % imagenesGaleria.length;
+    mostrarImagen(imagenActual);
+  });
+
+  document.getElementById('next').addEventListener('click', (e) => {
+    e.stopPropagation();
+    imagenActual = (imagenActual + 1) % imagenesGaleria.length;
+    mostrarImagen(imagenActual);
+  });
+    
+     document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  });
+    
+     document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll('img:not([loading])');
+    images.forEach(img => img.setAttribute('loading', 'lazy'));
+  });
+</script>
+
+
+</body>
+</html>
