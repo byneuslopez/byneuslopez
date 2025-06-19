@@ -55,21 +55,6 @@ font-family: "La Belle Aurore", cursive;
   left: 20px;
 }
 
-/* Mostrar topbar solo en móvil cuando sidebar está oculta */
-@media (max-width: 768px) {
-  .topbar {
-    display: flex;
-  }
-
-  .sidebar.visible ~ .topbar {
-    display: none;
-  }
-
-  .contenido {
-    margin-top: 60px; /* margen por la barra fija */
-  }
-}
-
 .sidebar {
   width: 250px;
   background-color: #f4f4f4;
@@ -171,34 +156,6 @@ section {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-  
-@media (max-width: 768px) {
-  .sidebar {
-    transform: translateX(-100%);
-  }
-
-  .sidebar.visible {
-    transform: translateX(0);
-  }
-
-  .toggle-btn {
-    display: block;
-  }
-
-  .contenido {
-    margin-left: 0;
-    width: 100%;
-    padding: 20px;
-  }
-
-
-    .cerrar-menu {
-    display: block;
-  }
-    .sidebar.visible .cerrar-menu {
-    display: block;
-  }
-}
 
 
 /* 🔹 Botón para cerrar menú lateral */
@@ -214,6 +171,8 @@ section {
   cursor: pointer;
   z-index: 101;
 }
+
+
 
 
 
@@ -449,6 +408,8 @@ section {
   color: transparent;
   -webkit-text-stroke: 1px #dee2e6;
   position: relative;
+  margin: auto;
+  text-align: center;
   z-index: 1;
 }
 .titulo-frontal {
@@ -501,14 +462,63 @@ section {
 .contenido p {
   margin: 0 0 10px;
   color: #555;
+
 }
 
 @media (max-width: 768px) {
   
+.topbar {
+    display: flex;
+  }
+
+  .sidebar.visible ~ .topbar {
+    display: none;
+  }
+
+  
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.visible {
+    transform: translateX(0);
+  }
+
+  .toggle-btn {
+    display: block;
+  }
+
+  .contenido {
+    margin-left: 0;
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+    .cerrar-menu {
+    display: block;
+  }
+    .sidebar.visible .cerrar-menu {
+    display: block;
+  }
+  
+    .formacion {
+    margin-bottom: 10px;
+  }
+
+  .formacion-contenido {
+    padding: 10px;
+  }
+  
+    .bloque {
+    margin: 0 auto;
+    width: 100%;
+  }
+  
     .hero-contenido h1 {
     font-size: 2rem;
   }
-
+  
   .hero-contenido p {
     font-size: 1rem;
   }
@@ -528,25 +538,26 @@ section {
   }
   
   .titulo-fondo {
-    font-size: 4rem;
+    font-size: 3rem;
+    text-align: center;
   }
 
   .titulo-frontal {
-    font-size: 1.5rem;
+    font-size: 2rem;
+        text-align: center;
   }
-
+  
+  .titulo-bloque {
+    text-align: center;
+    margin-left: 0;
+    padding: 0 10px;
+  }
+  
   .qualificacion-contenedor {
     flex-direction: column;
     gap: 60px;
   }
-  
-  .titulo-fondo {
-    font-size: 4rem;
-  }
 
-  .titulo-frontal {
-    font-size: 1.5rem;
-  }
   .bio-imagen {
     flex-direction: column;
     align-items: flex-start;
@@ -570,6 +581,15 @@ section {
   .columna-qualificacion {
     max-width: 80%;
   }
+    .formacion {
+    margin-bottom: 10px;
+  }
+
+  .formacion-contenido {
+    padding: 10px;
+  }
+
+  
 }
 /* hasta aqui las querys*/
 
@@ -661,9 +681,6 @@ section {
 }
 
 .contacto-titulo .titulo-fondo {
-  font-size: 6rem;
-  color: transparent;
-  -webkit-text-stroke: 1px #dee2e6;
   position: relative;
   z-index: 1;
 }
@@ -673,9 +690,6 @@ section {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2rem;
-  color: #8ba085;
-  z-index: 2;
 }
 
 .formulario-contacto {
@@ -760,7 +774,7 @@ textarea:focus {
 .trayectoria-contenedor {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
   justify-content: center;
   align-items: stretch; 
   margin-left: 50px;
@@ -991,3 +1005,7 @@ html, body {
   border: none;
 }
 
+.formacion-contenido a {
+  text-decoration: none;
+  color: black;
+}
