@@ -173,10 +173,6 @@ section {
 }
 
 
-
-
-
-
 /**PRUEBAS**/
 .hero-video {
   background: url('img/fondo-video.jpg') center/cover no-repeat;
@@ -589,7 +585,20 @@ section {
     padding: 10px;
   }
 
-  
+  .redes a {
+  color: #8ba085;
+  padding: 15px;
+  font-size: 25px;
+  text-decoration: none;
+
+}
+
+.redes {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 }
 /* hasta aqui las querys*/
 
