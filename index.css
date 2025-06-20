@@ -592,8 +592,9 @@ section {
   text-align: center;
 }
   
-  
-  
+.servicios-titulo .titulo-frontal {
+  font-size: 15px;
+  }
 
 }
 /* hasta aqui las querys*/
@@ -692,6 +693,16 @@ section {
 
 .contacto-titulo .titulo-frontal {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.servicios-titulo .titulo-frontal {
+  font-size: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
