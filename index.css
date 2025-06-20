@@ -584,21 +584,17 @@ section {
   .formacion-contenido {
     padding: 10px;
   }
-
-  .redes a {
-  color: #8ba085;
-  padding: 15px;
-  font-size: 25px;
-  text-decoration: none;
-
+  
+  .contacto-titulo .titulo-frontal {
+  font-size: 1.8rem;
+  white-space: normal;
+  width: 90%;
+  text-align: center;
 }
+  
+  
+  
 
-.redes {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
 }
 /* hasta aqui las querys*/
 
@@ -974,14 +970,22 @@ html, body {
   padding: 20px;
   font-size: 25px;
   text-decoration: none;
-
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
 }
 
 .redes {
   display: flex;
   justify-content: center;
-  gap: 20px;
   flex-wrap: wrap;
+  
+  
+  gap: 15px;
+  padding: 0;
 }
 
 .redes-titulo {
