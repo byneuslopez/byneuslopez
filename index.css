@@ -551,7 +551,7 @@ section {
   
   .qualificacion-contenedor {
     flex-direction: column;
-    gap: 60px;
+    gap: 20px;
   }
 
   .bio-imagen {
@@ -593,7 +593,7 @@ section {
 }
   
 .servicios-titulo .titulo-frontal {
-  font-size: 15px;
+  font-size: 10px;
   }
 
 }
@@ -699,7 +699,8 @@ section {
 }
 
 .servicios-titulo .titulo-frontal {
-  font-size: 25px;
+  width: 100%;
+  font-size: 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -809,19 +810,6 @@ textarea:focus {
   text-align: left;
 }
 
-
--contenido {
-  background: #f4f4f4;
-  padding: 15px;
-  border-radius: 5px;
- 
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
-  opacity: 0;
-  pointer-events: none;
-}
-
 .formacion-contenido {
   min-width: 250px;
   flex: 0 0 auto;
@@ -867,33 +855,6 @@ textarea:focus {
 
 .flecha.activa {
   transform: rotate(180deg);
-}
-
-
-
-.tarjeta {
-  min-width: 250px;
-  flex: 0 0 auto;
-  background-color: #eee;
-  border-radius: 8px;
-  padding: 10px;
-  scroll-snap-align: start;
-  text-align: center;
-}
-
-.tarjeta img {
-width: 160px;
-  height: 160px;
-  object-fit: contain;
-  border-radius: 6px;
-  margin-bottom: 10px;
-}
-
-
-.bloque-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
 
 .formacion-btn {
@@ -968,17 +929,9 @@ html, body {
 }
 
 
-.carrusel-premios::-webkit-scrollbar {
-  display: none;
-}
-
-.sidebar.visible ~ .back-to-top {
-  display: none !important;
-}
-
 .redes a {
   color: #8ba085;
-  padding: 20px;
+  padding: 10px;
   font-size: 25px;
   text-decoration: none;
   
@@ -995,7 +948,7 @@ html, body {
   flex-wrap: wrap;
   
   
-  gap: 15px;
+  gap: 10px;
   padding: 0;
 }
 
