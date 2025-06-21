@@ -410,8 +410,7 @@ font-family: "La Belle Aurore", cursive;
   color: white;
   overflow: hidden;
   z-index: 1;
-  
-    min-height: 20vh; /* más estrecho */
+  width: 110%;
   padding: 40px 20px; /* menos espacio vertical */
   
     border-radius: 12px;
@@ -433,7 +432,7 @@ font-family: "La Belle Aurore", cursive;
 
 .hero-texto {
   padding: 40px;
-  max-width: 600px;
+     width: 100%;
   position: relative;
   z-index: 2;
 }
