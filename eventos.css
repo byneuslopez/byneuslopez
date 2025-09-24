@@ -388,7 +388,7 @@ font-family: "La Belle Aurore", cursive;
     max-width: 95%;
   }
    .bloque-hero {
-    width: 100vw;
+    width: 100%;
     margin-left: -10px;
   }
 
@@ -410,7 +410,7 @@ font-family: "La Belle Aurore", cursive;
   color: white;
   overflow: hidden;
   z-index: 1;
-  width: 110%;
+  width: 100%;
   padding: 40px 20px; /* menos espacio vertical */
   
     border-radius: 12px;
@@ -423,7 +423,7 @@ font-family: "La Belle Aurore", cursive;
   content: "";
   position: absolute;
   top: 0; left: 0;
-  width: 110%;
+  width: 100%;
   height: 100%;
  z-index: 1;
     background-color: rgba(255, 255, 255, 0.67);
