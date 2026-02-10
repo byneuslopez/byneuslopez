@@ -521,3 +521,74 @@ font-family: "La Belle Aurore", cursive;
     font-size: 30px;
   }
 }
+
+/* ---- Obras individuales para hacer ver más y q se vea la info de fuera ---- */
+
+.obra {
+  position: relative;
+  width: calc(25% - 15px);
+}
+
+.galeriaorden .obra img {
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Info visible */
+.obra-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-top: 6px;
+  color: #444;
+}
+
+.obra-estado {
+  font-weight: bold;
+}
+
+.obra-estado.disponible {
+  color: #688b6a;
+}
+
+.obra-estado.vendido {
+  color: #606060;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .obra {
+    width: calc(33.33% - 15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .obra {
+    width: calc(50% - 15px);
+  }
+}
+
+@media (max-width: 480px) {
+  .obra {
+    width: 100%;
+  }
+}
+
+/* Botón ver más */
+.ver-mas {
+  margin: 30px auto 0;
+  display: block;
+  padding: 10px 25px;
+  border: 1px solid #688b6a;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  color: #688b6a;
+  border-radius: 20px;
+}
+
+.ver-mas:hover {
+  background-color: #688b6a;
+  color: #fff;
+}

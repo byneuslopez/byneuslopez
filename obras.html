@@ -80,17 +80,80 @@
          <p>Para esta serie he utilizado pintura, collage y xilografía. Indagando en el concepto de la identidad mediante fragmentos donde las experiencias se entrelazan a lo largo del tiempo. A veces de forma clara y otras difusa, capturando la fragilidad de la memoria y la distorsión que provoca el tiempo, reflexionando sobre lo objetivo y lo adquirido.</p>
        </div>
     </div>
-    <div class="galeriaorden">
-    <img src="img/Serie-cicatrices-de-memoria/7.png" alt="Obra 1" data-caption="50x70 cm – Óleo – Disponible">
-    <img src="img/Serie-cicatrices-de-memoria/6.png" alt="Obra 1" data-caption="50x70 cm – Óleo – Disponible">
-    <img src="img/Serie-cicatrices-de-memoria/5.png" alt="Obra 1" data-caption="50x70 cm – Óleo – Disponible">
-    <img src="img/Serie-cicatrices-de-memoria/4.JPG" alt="Obra 1" data-caption="50x70 cm – Óleo – Disponible">
-    <img src="img/Serie-cicatrices-de-memoria/3.PNG" alt="Obra 1" data-caption="50x70 cm – Óleo – Disponible">
-    <img src="img/Serie-cicatrices-de-memoria/2.jpg" alt="Obra 1" data-caption="50x70 cm – Óleo – Disponible">
-    <img src="img/Serie-cicatrices-de-memoria/1.jpg" alt="Obra 1" data-caption="50x70 cm – Óleo – Disponible">
-    <img src="img/Serie-cicatrices-de-memoria/0.jpg" alt="Obra 1" data-caption="50x70 cm – Óleo – Disponible">
-
+    
+   <div class="galeriaorden" id="cicatrices1">
+    
+    <div class="obra">
+    <img src="img/Serie-cicatrices-de-memoria/7.png" alt="Cicatrices de memoria" data-caption="Ser visto, 2025 · Óleo sobre collage, 90 x 70 cm.">
+    <div class="obra-info">
+      <span class="obra-datos"><strong>Ver, 2024</strong> Óleo sobre collage, 90 x 70 cm..</span>
+      <span class="obra-estado disponible">Disponible</span>
     </div>
+  </div>
+   
+   <div class="obra">
+    <img src="img/Serie-cicatrices-de-memoria/6.png"
+         data-caption="Ser visto, 2025 · Óleo sobre collage, 90 x 70 cm.">
+    <div class="obra-info">
+      <span class="obra-datos"><strong>Ser visto, 2024</strong> Óleo sobre collage, 90 x 70 cm.</span>
+      <span class="obra-estado disponible">Disponible</span>
+    </div>
+  </div>
+     
+    <div class="obra">
+    <img src="img/Serie-cicatrices-de-memoria/4.JPG"
+         data-caption="Máscara II, 2024 · Óleo sobre collage, 60 x 50 cm.">
+    <div class="obra-info">
+      <span class="obra-datos"><strong>Máscara II, 2024</strong> Óleo sobre collage, 60 x 50 cm.</span>
+      <span class="obra-estado disponible">Disponible</span>
+    </div>
+  </div>
+    <div class="obra">
+    <img src="img/Serie-cicatrices-de-memoria/3.PNG"
+         data-caption="Ser visto, 2025 · Óleo sobre collage, 60 x 50 cm.">
+    <div class="obra-info">
+      <span class="obra-datos"><strong>Máscara I, 204</strong> Óleo sobre collage, 60 x 50 cm.</span>
+      <span class="obra-estado disponible">Disponible</span>
+    </div>
+  </div>
+   <div class="obra">
+    <img src="img/Serie-cicatrices-de-memoria/2.jpg"
+         data-caption="Identity II, 2024 · Óleo sobre collage, 60 x 40 cm.">
+    <div class="obra-info">
+      <span class="obra-datos"><strong>Identity II, 2024</strong> Óleo sobre collage, 60 x 40 cm.</span>
+      <span class="obra-estado vendido">No disponible</span>
+    </div>
+  </div>
+      <div class="obra">
+    <img src="img/Serie-cicatrices-de-memoria/1.jpg"
+         data-caption="Identity I, 2024 · Óleo sobre collage, 60 x 40 cm.">
+    <div class="obra-info">
+      <span class="obra-datos"><strong>Identity I, 2024</strong> Óleo sobre collage, 60 x 40 cm.</span>
+      <span class="obra-estado disponible">Disponible</span>
+    </div>
+  </div> 
+   <div class="obra">
+    <img src="img/Serie-cicatrices-de-memoria/0.jpg"
+         data-caption="Identity 0, 2024 · Xilografía, 70 x 50 cm.">
+    <div class="obra-info">
+      <span class="obra-datos"><strong>Identity, 2024</strong> Xilografía, 70 x 50 cm.</span>
+      <span class="obra-estado disponible">Disponible</span>
+    </div>
+  </div>
+   <div class="obra">
+    <img src="img/Serie-cicatrices-de-memoria/5.png"
+         data-caption="Ser visto, 2025 · 90×70, Óleo.">
+    <div class="obra-info">
+      <span class="obra-datos"><strong>2024</strong> 90×70, Óleo.</span>
+      <span class="obra-estado vendido">No disponible</span>
+    </div>
+  </div> 
+   
+    </div>
+    <button class="ver-mas" data-target="cicatrices1">
+  Ver serie completa
+</button>
+    
   </section>
 
   <section class="serie">
@@ -183,7 +246,7 @@ Como artista, he centrado mi práctica en explorar cómo los recuerdos, a menudo
   <!-- 🔹 Modal de imagen -->
   <div id="modal" class="modal">
     <span id="cerrar">&times;</span>
-    <img id="imagen-modal" src="" alt="">
+    <img id="imagen-modal" src="-" alt="">
     <div id="pie-foto"></div>
     <span id="prev" class="modal-arrow">&#10094;</span>
 <span id="next" class="modal-arrow">&#10095;</span>
@@ -212,7 +275,28 @@ Como artista, he centrado mi práctica en explorar cómo los recuerdos, a menudo
   let imagenesGaleria = [];
   let imagenActual = 0;
 
-  // Función para abrir imagen y guardar galería
+  // Función para abrir imagen y guardar galería ver más
+    document.querySelectorAll('.galeriaorden').forEach(galeria => {
+  const obras = galeria.querySelectorAll('.obra');
+
+  obras.forEach((obra, index) => {
+    if (index >= 6) obra.style.display = 'none';
+  });
+});
+
+document.querySelectorAll('.ver-mas').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const galeria = document.getElementById(btn.dataset.target);
+    galeria.querySelectorAll('.obra').forEach(obra => {
+      obra.style.display = 'block';
+    });
+    btn.style.display = 'none';
+  });
+});
+
+    
+    
+    // Función para abrir imagen y guardar galería
   function abrirImagen(e, selectorGaleria) {
     const galeria = e.target.closest(selectorGaleria);
     imagenesGaleria = Array.from(galeria.querySelectorAll('img'));
