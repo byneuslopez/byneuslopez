@@ -534,25 +534,35 @@ font-family: "La Belle Aurore", cursive;
   cursor: pointer;
 }
 
-/* Info visible */
-.obra-info {
-  display: flex;
-  justify-content: space-between;
+/* Info visible */.obra-info {
+  margin-top: 8px;
+  text-align: center;
   font-size: 13px;
-  margin-top: 6px;
-  color: #444;
+  line-height: 1.4;
+}
+
+.obra-titulo {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.obra-datos {
+  font-size: 12.5px;
+  color: #555;
 }
 
 .obra-estado {
-  font-weight: bold;
+  margin-top: 2px;
 }
 
 .obra-estado.disponible {
-  color: #688b6a;
+  color: #969696;
+  font-style: italic;
 }
 
 .obra-estado.vendido {
-  color: #606060;
+  color: #969696;
+  font-style: italic;
 }
 
 /* Responsive */
@@ -592,3 +602,9 @@ font-family: "La Belle Aurore", cursive;
   background-color: #688b6a;
   color: #fff;
 }
+
+.ver-mas.activo {
+  background-color: #333;
+  color: #fff;
+}
+
