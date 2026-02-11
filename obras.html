@@ -513,22 +513,23 @@ Como artista, he centrado mi práctica en explorar cómo los recuerdos, a menudo
   let imagenesGaleria = [];
   let imagenActual = 0;
 
-  // Función para abrir y cerrar ver más
- document.querySelectorAll('.galeria, .galeriaorden').forEach(galeria => {
+ // 1. OCULTACIÓN INICIAL (Al cargar la página)
+document.querySelectorAll('.galeria, .galeriaorden').forEach(galeria => {
   const obras = galeria.querySelectorAll('.obra');
+  
+  // Definimos el límite igual que en el botón
+  const limite = (galeria.id === "pueblos" || galeria.id === "Galway") ? 1 : 4;
 
-  if (obras.length <= 4) return;
+  if (obras.length <= limite) return;
 
   obras.forEach((obra, index) => {
-    if (galeria.id === "pueblos" || galeria.id === "Galway") {
-   if (index >= 1) obra.style.display = 'none';
-} else {
-   if (index >= 4) obra.style.display = 'none';
-}
-});
+    if (index >= limite) {
+      obra.style.display = 'none';
+    }
+  });
 });
 
-
+// 2. LÓGICA DEL BOTÓN (Para desplegar/replegar)
 document.querySelectorAll('.ver-mas').forEach(btn => {
   btn.addEventListener('click', () => {
     const galeriaId = btn.dataset.target;
@@ -536,12 +537,11 @@ document.querySelectorAll('.ver-mas').forEach(btn => {
     const obras = galeria.querySelectorAll('.obra');
     const expanded = btn.dataset.expanded === "true";
 
-    // Determinamos el límite según el ID de la galería
-    // Si es una de las de acuarelas, el límite es 1, si no, es 4.
     const limite = (galeriaId === "pueblos" || galeriaId === "Galway") ? 1 : 4;
 
     obras.forEach((obra, index) => {
       if (index >= limite) {
+        // Usamos flex o block dependiendo de tu CSS (en tu caso, .obra es block/float)
         obra.style.display = expanded ? 'none' : 'block';
       }
     });
@@ -551,8 +551,6 @@ document.querySelectorAll('.ver-mas').forEach(btn => {
     btn.classList.toggle('activo', !expanded);
   });
 });
-
-
     
     
     // Función para abrir imagen y guardar galería
