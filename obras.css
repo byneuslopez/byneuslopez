@@ -643,14 +643,37 @@ details[open] summary::after {
 }
 
 
+/* ACUARELAS: por defecto = 2 columnas */
 .contenedor-acuarelas {
   display: flex;
-  gap: 20px; /* Espacio entre ellas */
+  gap: 20px;
   justify-content: space-between;
 }
 
-.serie-acuarela {
-  flex: 1; /* Hace que ambas ocupen el mismo ancho */
+.serie-acuarela { flex: 1; }
+
+/* Cuando se despliega (modo ancho completo) */
+.contenedor-acuarelas.acuarelas-full {
+  flex-direction: column;
+}
+
+.contenedor-acuarelas.acuarelas-full .serie-acuarela {
+  width: 100%;
+}
+
+/* Miniaturas más grandes en modo desplegado (menos columnas) */
+.contenedor-acuarelas.acuarelas-full .galeriaorden .obra {
+  width: calc(33.33% - 15px); /* 3 columnas */
+}
+@media (max-width: 768px) {
+  .contenedor-acuarelas.acuarelas-full .galeriaorden .obra {
+    width: calc(50% - 15px); /* 2 columnas */
+  }
+}
+@media (max-width: 480px) {
+  .contenedor-acuarelas.acuarelas-full .galeriaorden .obra {
+    width: 100%; /* 1 columna */
+  }
 }
 
 /* Para que en el móvil se pongan una debajo de otra */

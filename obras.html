@@ -68,7 +68,7 @@
       <p class="copyright">© Neus López 2025</p>
     </div>
   </aside>
-  <main class="contenido">
+  <section class="contenido">
 
   <!-- 🔹 Sección de obras -->
   
@@ -501,7 +501,7 @@ Como artista, he centrado mi práctica en explorar cómo los recuerdos, a menudo
     <span id="prev" class="modal-arrow">&#10094;</span>
 <span id="next" class="modal-arrow">&#10095;</span>
   </div>
-</main>
+</section>
 
   <script>
   const sidebar = document.getElementById('sidebar');
@@ -562,6 +562,20 @@ document.querySelectorAll('.ver-mas').forEach(btn => {
     btn.textContent = expanded ? "Ver serie completa" : "Ver menos";
     btn.classList.toggle('activo', !expanded);
   });
+  
+  // --- ACUARELAS: si se expande Pueblos o Galway -> full width ---
+const contAcuarelas = document.querySelector('.contenedor-acuarelas');
+if (contAcuarelas) {
+  const pueblosBtn = document.querySelector('.ver-mas[data-target="pueblos"]');
+  const galwayBtn  = document.querySelector('.ver-mas[data-target="Galway"]');
+
+  const pueblosOpen = pueblosBtn && pueblosBtn.dataset.expanded === "true";
+  const galwayOpen  = galwayBtn && galwayBtn.dataset.expanded === "true";
+
+  contAcuarelas.classList.toggle('acuarelas-full', pueblosOpen || galwayOpen);
+}
+
+  
 });
     
     
@@ -691,6 +705,6 @@ document.querySelectorAll('.ver-mas').forEach(btn => {
     
 </script>
 
-
+  </section>
 </body>
 </html>
