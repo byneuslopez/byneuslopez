@@ -4,11 +4,16 @@
   box-sizing: border-box;
 }
 
+
 h1 {
-  text-align: left; 
-  font-family: 'Cabin', sans-serif;
-  font-size: 30px;
-  color: #333;
+    font-family: "Fraunces", serif;
+   font-size: 30px;
+   font-weight: 300;
+   text-align: left;
+}
+h1.encargostitulo { 
+  margin-left: 15px; 
+  margin-bottom: 20px; 
 }
 
 
@@ -237,26 +242,27 @@ font-family: "La Belle Aurore", cursive;
 .serie {
   margin-bottom: 150px;
 }
-.serie h2{
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color:  #f4f4f4;
-  padding: 10px;
-  width: 100%;
-  border-radius: 20px;
-  
-  font-family: "Dela Gothic One", sans-serif;
-  font-weight: 30;
-  font-style: normal;
-  
-  background-color:  #8ba085;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  
+
+.serie h2 {
+   font-family: "Fraunces", serif;
+   font-size: 36px;
+   font-weight: 400;
+   text-align: left;
+   margin-bottom: 20px;
+}
+
+
+.serie h2::after {
+   content: "";
+   display: block;
+   width: 60px;
+   height: 2px;
+   background: #000;
+   margin-top: 10px;
 }
 
 .intro-serie p {
-  width: 90%;
+  width: 100%;
   text-align: justify;
  font-size: 17px;
   line-height: 1.6;
@@ -299,8 +305,13 @@ font-family: "La Belle Aurore", cursive;
   object-fit: contain;
   background-color: #f3f3f3;
   box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  transition: transform .2s ease, box-shadow .2s ease;
+
 }
 
+.galeriaorden img:hover {
+  transform: translateY(-3px); 
+}
 /* Tablet */
 @media (max-width: 1024px) {
   .galeriaorden img {
@@ -336,8 +347,13 @@ font-family: "La Belle Aurore", cursive;
   break-inside: avoid;
   background-color: #f3f3f3;
   box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  transition: transform .2s ease, box-shadow .2s ease;
+
 }
-  
+
+.galeria img:hover {
+  transform: translateY(-3px); 
+} 
   @media (max-width: 1024px) {
   .galeria {
     column-count: 3;

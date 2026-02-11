@@ -4,6 +4,18 @@
   box-sizing: border-box;
 }
 
+h1 {
+    font-family: "Fraunces", serif;
+   font-size: 30px;
+   font-weight: 300;
+   text-align: left;
+}
+h1.livearttitulo { 
+  margin-left: 15px; 
+  margin-bottom: 20px; 
+}
+
+
 h2 {
   color: #8ba085;
   font-family: 'Merriweather', serif;
