@@ -17,7 +17,16 @@ body {
   color: #333;
   line-height: 1.6;
 }
-/* Cabecera fija para móviles */
+
+h3.experienciadentro {
+  margin-top: 20px;
+  margin-bottom: -10px;
+}
+
+h3.experienciadentro1{
+  margin-top: 20px;
+  margin-bottom: -10px;
+}
 .topbar {
   display: none;
   position: fixed;
