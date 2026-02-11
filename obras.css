@@ -276,6 +276,13 @@ font-family: "La Belle Aurore", cursive;
     /*max-width: 900px;*/
 }
 
+/*Prueba mejora */
+.serie, .intro-serie {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
 
 
 .intro-serie div {
@@ -535,6 +542,9 @@ font-family: "La Belle Aurore", cursive;
 .obra {
   position: relative;
   width: calc(25% - 15px);
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  background: #fff;
 }
 
 .galeriaorden .obra img {
@@ -542,6 +552,10 @@ font-family: "La Belle Aurore", cursive;
   cursor: pointer;
 }
 
+.obra img {
+  display: block;
+  height: auto;
+}
 /* Info visible */.obra-info {
   margin-top: 8px;
   text-align: center;
@@ -604,6 +618,8 @@ font-family: "La Belle Aurore", cursive;
   transition: all 0.3s ease;
   color: #688b6a;
   border-radius: 20px;
+  
+  
 }
 
 .ver-mas:hover {
