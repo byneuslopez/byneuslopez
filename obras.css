@@ -734,7 +734,7 @@ details[open] summary::after {
 
 /* ACUARELAS PLEGADAS: 2 columnas (más grande) */
 .contenedor-acuarelas:not(.acuarelas-full) .galeriaorden .obra {
-  width: calc(50% - 15px);
+  width: calc(80% - 15px);
 }
 
 /* Tablet: también 2 columnas */
