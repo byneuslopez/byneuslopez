@@ -378,8 +378,7 @@ Como artista, he centrado mi práctica en explorar cómo los recuerdos, a menudo
     </div>
     
     
-    <div class="contenedor-acuarelas">
-  <section class="serie-acuarela">
+
     <div class="flex-acuarelas">
   <section class="sub-serie-acuarela">
      <h3>Petrer</h3>
@@ -426,8 +425,7 @@ Como artista, he centrado mi práctica en explorar cómo los recuerdos, a menudo
 </button>
    
     </section>
-    <section class="serie-acuarela">
-    <div class="flex-acuarelas">
+  
   <section class="sub-serie-acuarela">
     <h3>Galway</h3>
      <div class="galeriaorden" id="Galway">
@@ -481,13 +479,7 @@ Como artista, he centrado mi práctica en explorar cómo los recuerdos, a menudo
 </button>
     </section>
      </div>
-</section> 
-  </div>
-  
-  
-  </section> 
-</div>
- 
+ </section>
  
   <section class="serie">
     <div class="intro-serie">
@@ -551,7 +543,6 @@ document.querySelectorAll('.galeria, .galeriaorden').forEach(galeria => {
   });
 });
 
-// 2. LÓGICA DEL BOTÓN (Para desplegar/replegar)
 // 2. LÓGICA DEL BOTÓN (Para desplegar/replegar y expandir fila)
 document.querySelectorAll('.ver-mas').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -560,37 +551,38 @@ document.querySelectorAll('.ver-mas').forEach(btn => {
     const obras = galeria.querySelectorAll('.obra');
     const expanded = btn.dataset.expanded === "true";
     
-    // Buscamos si esta galería está dentro del contenedor de acuarelas
+    // Buscamos el contenedor de acuarelas
     const contenedorFila = btn.closest('.flex-acuarelas');
-
     const limite = (galeriaId === "pueblos" || galeriaId === "Galway") ? 1 : 4;
 
+    // Mostrar/Ocultar obras
     obras.forEach((obra, index) => {
       if (index >= limite) {
         obra.style.display = expanded ? 'none' : 'block';
       }
     });
 
-    // Si existe el contenedor de fila (acuarelas), añadimos/quitamos la clase
+    // Cambiar estado del botón
+    btn.dataset.expanded = !expanded;
+    btn.textContent = !expanded ? "Ver menos" : "Ver serie completa";
+    btn.classList.toggle('activo', !expanded);
+
+    // Lógica de expansión de columnas
     if (contenedorFila) {
+      // Si el botón que acabamos de pulsar se ha abierto, expandimos
       if (!expanded) {
         contenedorFila.classList.add('expandida');
       } else {
-        // Solo quitamos 'expandida' si AMBAS galerías están cerradas
-        const otraGaleriaId = (galeriaId === "pueblos") ? "Galway" : "pueblos";
-        const otroBtn = document.querySelector(`[data-target="${otraGaleriaId}"]`);
-        if (otroBtn.dataset.expanded === "false") {
+        // Solo quitamos la expansión si AMBAS galerías están cerradas ahora
+        const todosLosBtns = contenedorFila.querySelectorAll('.ver-mas');
+        const algunoAbierto = Array.from(todosLosBtns).some(b => b.dataset.expanded === "true");
+        if (!algunoAbierto) {
           contenedorFila.classList.remove('expandida');
         }
       }
     }
-
-    btn.dataset.expanded = expanded ? "false" : "true";
-    btn.textContent = expanded ? "Ver serie completa" : "Ver menos";
-    btn.classList.toggle('activo', !expanded);
   });
 });
-  
   // --- ACUARELAS: si se expande Pueblos o Galway -> full width ---
 const contAcuarelas = document.querySelector('.contenedor-acuarelas');
 if (contAcuarelas) {

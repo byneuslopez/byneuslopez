@@ -642,74 +642,43 @@ details[open] summary::after {
   font-weight: normal;
 }
 
-
-/* ACUARELAS: por defecto = 2 columnas */
-.contenedor-acuarelas {
-  display: flex;
-  gap: 20px;
-  justify-content: space-between;
-}
-
-.serie-acuarela { flex: 1; }
-
-/* Cuando se despliega (modo ancho completo) */
-.contenedor-acuarelas.acuarelas-full {
-  flex-direction: column;
-}
-
-.contenedor-acuarelas.acuarelas-full .serie-acuarela {
-  width: 100%;
-}
-
-/* Miniaturas más grandes en modo desplegado (menos columnas) */
-.contenedor-acuarelas.acuarelas-full .galeriaorden .obra {
-  width: calc(33.33% - 15px); /* 3 columnas */
-}
-@media (max-width: 768px) {
-  .contenedor-acuarelas.acuarelas-full .galeriaorden .obra {
-    width: calc(50% - 15px); /* 2 columnas */
-  }
-}
-@media (max-width: 480px) {
-  .contenedor-acuarelas.acuarelas-full .galeriaorden .obra {
-    width: 100%; /* 1 columna */
-  }
-}
-
-/* Para que en el móvil se pongan una debajo de otra */
-@media (max-width: 768px) {
-  .contenedor-acuarelas {
-    flex-direction: column;
-  }
-}
-
-/* Layout inicial: dos columnas en escritorio */
+/* --- Lógica de Acuarelas --- */
 @media (min-width: 769px) {
   .flex-acuarelas {
     display: flex;
     gap: 40px;
     align-items: flex-start;
-    transition: all 0.5s ease; /* Transición suave */
+    transition: all 0.4s ease;
   }
 
-  /* Cuando una sección se expande, el contenedor deja de ser flex */
+  /* Cuando se pulsa "Ver más", el contenedor pasa a ser bloque (columnas ocupan el 100%) */
   .flex-acuarelas.expandida {
-    display: block; 
+    display: block;
   }
 
   .sub-serie-acuarela {
     flex: 1;
     width: 100%;
+    margin-bottom: 40px;
   }
 }
 
-/* Ajuste de las obras dentro de la galería desplegada */
+/* En móvil siempre en columna */
+@media (max-width: 768px) {
+  .flex-acuarelas {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+/* Ajuste de imágenes cuando está expandido: que vuelvan a ser 4 por fila */
 .flex-acuarelas.expandida .galeriaorden .obra {
-    width: calc(25% - 15px) !important; /* Vuelve a 4 columnas por fila como el resto */
+  width: calc(25% - 15px) !important;
 }
 
 @media (max-width: 768px) {
-    .flex-acuarelas.expandida .galeriaorden .obra {
-        width: calc(50% - 15px) !important; /* En móvil 2 columnas */
-    }
+  .flex-acuarelas.expandida .galeriaorden .obra {
+    width: calc(50% - 15px) !important;
+  }
 }
