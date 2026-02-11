@@ -59,11 +59,11 @@
 
     <div class="sidebar-footer">
       <div class="social">
-        <a href="https://www.instagram.com/by.neuslopez/" target="blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.facebook.com/neus.lopez.353" target="blank"><i class="fa-brands fa-facebook"></i></a>
-        <a href="https://www.tiktok.com/@by.neuslopez" target="blank"><i class="fa-brands fa-tiktok"></i></a>
-        <a href="https://t.me/byneuslopez" target="blank"><i class="fa-brands fa-telegram"></i></a>
-        <a href="https://www.youtube.com/@By.neuslopez" target="blank"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.instagram.com/by.neuslopez/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/neus.lopez.353" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.tiktok.com/@by.neuslopez" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://t.me/byneuslopez" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i></a>
+        <a href="https://www.youtube.com/@By.neuslopez" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
     </div>
       <p class="copyright">© Neus López 2025</p>
     </div>
@@ -72,7 +72,7 @@
 
   <!-- 🔹 Sección de obras -->
   
-  <!--<h1>Obras:</h1>-->
+  <h1  class="obrasxseries" >Obras por series</h1>
   <section class="serie">
     <div class="intro-serie">
        <div>
@@ -551,16 +551,17 @@ document.querySelectorAll('.galeria, .galeriaorden').forEach(galeria => {
   });
 });
 
-// 2. LÓGICA DEL BOTÓN (Para desplegar/replegar)
 // 2. LÓGICA DEL BOTÓN (Para desplegar/replegar y expandir fila)
 document.querySelectorAll('.ver-mas').forEach(btn => {
   btn.addEventListener('click', () => {
     const galeriaId = btn.dataset.target;
     const galeria = document.getElementById(galeriaId);
+    if (!galeria) return;
+
     const obras = galeria.querySelectorAll('.obra');
     const expanded = btn.dataset.expanded === "true";
-    
-    // Buscamos si esta galería está dentro del contenedor de acuarelas
+
+    // Si está dentro del bloque de acuarelas (Pueblos/Galway)
     const contenedorFila = btn.closest('.flex-acuarelas');
 
     const limite = (galeriaId === "pueblos" || galeriaId === "Galway") ? 1 : 4;
@@ -571,17 +572,22 @@ document.querySelectorAll('.ver-mas').forEach(btn => {
       }
     });
 
-    // Si existe el contenedor de fila (acuarelas), añadimos/quitamos la clase
+    // Control de expansión en acuarelas (ancho completo)
+    const contAcuarelas = document.querySelector('.contenedor-acuarelas');
+    if (contAcuarelas) {
+      const pueblosBtn = document.querySelector('.ver-mas[data-target="pueblos"]');
+      const galwayBtn  = document.querySelector('.ver-mas[data-target="Galway"]');
+      const pueblosOpen = pueblosBtn && pueblosBtn.dataset.expanded === "true";
+      const galwayOpen  = galwayBtn && galwayBtn.dataset.expanded === "true";
+      contAcuarelas.classList.toggle('acuarelas-full', pueblosOpen || galwayOpen);
+    }
+
+    // Expandida (solo para la fila donde esté el botón)
     if (contenedorFila) {
       if (!expanded) {
         contenedorFila.classList.add('expandida');
       } else {
-        // Solo quitamos 'expandida' si AMBAS galerías están cerradas
-        const otraGaleriaId = (galeriaId === "pueblos") ? "Galway" : "pueblos";
-        const otroBtn = document.querySelector(`[data-target="${otraGaleriaId}"]`);
-        if (otroBtn.dataset.expanded === "false") {
-          contenedorFila.classList.remove('expandida');
-        }
+        contenedorFila.classList.remove('expandida');
       }
     }
 
@@ -590,6 +596,7 @@ document.querySelectorAll('.ver-mas').forEach(btn => {
     btn.classList.toggle('activo', !expanded);
   });
 });
+
   
   // --- ACUARELAS: si se expande Pueblos o Galway -> full width ---
 const contAcuarelas = document.querySelector('.contenedor-acuarelas');

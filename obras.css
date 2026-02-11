@@ -10,11 +10,16 @@ html, body {
 }
 
 h1 {
-  text-align: left; 
-  font-family: 'Cabin', sans-serif;
-  font-size: 30px;
-  color: #333;
+    font-family: "Fraunces", serif;
+   font-size: 30px;
+   font-weight: 300;
+   text-align: left;
 }
+h1.obrasxseries { 
+  margin-left: 15px; 
+  margin-bottom: 20px; 
+}
+
 
 h2 {
   color: #000000;
@@ -227,25 +232,7 @@ font-family: "La Belle Aurore", cursive;
 .serie {
   margin-bottom: 150px;
 }
-/*
-.serie h2{
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color:  #f4f4f4;
-  padding: 10px;
-  width: 100%;
-  border-radius: 20px;
-  
-  font-family: "Dela Gothic One", sans-serif;
-  font-weight: 30;
-  font-style: normal;
-  
-  background-color:  #8ba085;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  
-}
-*/
+
 
 .serie h2 {
    font-family: "Fraunces", serif;
