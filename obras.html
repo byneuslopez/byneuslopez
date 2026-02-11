@@ -560,26 +560,6 @@ document.querySelectorAll('.ver-mas').forEach(btn => {
 
     const obras = galeria.querySelectorAll('.obra');
     const expanded = btn.dataset.expanded === "true";
-const willExpand = !expanded;
-
-/* ...tu código de ocultar/mostrar obras aquí... */
-
-/* Primero actualiza el estado del botón */
-btn.dataset.expanded = willExpand ? "true" : "false";
-btn.textContent = willExpand ? "Ver menos" : "Ver serie completa";
-btn.classList.toggle('activo', willExpand);
-
-/* Y AHORA calcula si hay alguno abierto para activar ancho completo */
-const contAcuarelas = document.querySelector('.contenedor-acuarelas');
-if (contAcuarelas) {
-  const pueblosBtn = document.querySelector('.ver-mas[data-target="pueblos"]');
-  const galwayBtn  = document.querySelector('.ver-mas[data-target="Galway"]');
-
-  const pueblosOpen = pueblosBtn?.dataset.expanded === "true";
-  const galwayOpen  = galwayBtn?.dataset.expanded === "true";
-
-  contAcuarelas.classList.toggle('acuarelas-full', pueblosOpen || galwayOpen);
-}
 
     // Si está dentro del bloque de acuarelas (Pueblos/Galway)
     const contenedorFila = btn.closest('.flex-acuarelas');
