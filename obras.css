@@ -255,6 +255,7 @@ font-family: "La Belle Aurore", cursive;
    margin-bottom: 20px;
 }
 
+
 .serie h2::after {
    content: "";
    display: block;
@@ -263,7 +264,6 @@ font-family: "La Belle Aurore", cursive;
    background: #000;
    margin-top: 10px;
 }
-
 
 
 .intro-serie p {
@@ -627,3 +627,36 @@ font-family: "La Belle Aurore", cursive;
 .ver-mas.activo {
   background-color: #333;
   color: #fff;}
+/*
+
+//Statement*/
+
+summary {
+  cursor: pointer;
+  text-decoration: underline;
+  text-align: left;
+}
+
+details[open] summary::after {
+  content: " (Leer menos)";
+  font-size: 0.8em;
+  font-weight: normal;
+}
+
+
+.contenedor-acuarelas {
+  display: flex;
+  gap: 20px; /* Espacio entre ellas */
+  justify-content: space-between;
+}
+
+.serie-acuarela {
+  flex: 1; /* Hace que ambas ocupen el mismo ancho */
+}
+
+/* Para que en el móvil se pongan una debajo de otra */
+@media (max-width: 768px) {
+  .contenedor-acuarelas {
+    flex-direction: column;
+  }
+}
