@@ -682,3 +682,34 @@ details[open] summary::after {
     flex-direction: column;
   }
 }
+
+/* Layout inicial: dos columnas en escritorio */
+@media (min-width: 769px) {
+  .flex-acuarelas {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    transition: all 0.5s ease; /* Transición suave */
+  }
+
+  /* Cuando una sección se expande, el contenedor deja de ser flex */
+  .flex-acuarelas.expandida {
+    display: block; 
+  }
+
+  .sub-serie-acuarela {
+    flex: 1;
+    width: 100%;
+  }
+}
+
+/* Ajuste de las obras dentro de la galería desplegada */
+.flex-acuarelas.expandida .galeriaorden .obra {
+    width: calc(25% - 15px) !important; /* Vuelve a 4 columnas por fila como el resto */
+}
+
+@media (max-width: 768px) {
+    .flex-acuarelas.expandida .galeriaorden .obra {
+        width: calc(50% - 15px) !important; /* En móvil 2 columnas */
+    }
+}

@@ -380,6 +380,8 @@ Como artista, he centrado mi práctica en explorar cómo los recuerdos, a menudo
     
     <div class="contenedor-acuarelas">
   <section class="serie-acuarela">
+    <div class="flex-acuarelas">
+  <section class="sub-serie-acuarela">
      <h3>Petrer</h3>
      
     <div class="galeriaorden" id="pueblos">
@@ -422,8 +424,11 @@ Como artista, he centrado mi práctica en explorar cómo los recuerdos, a menudo
     <button class="ver-mas" data-target="pueblos" data-expanded="false">
   Ver serie completa
 </button>
+   
     </section>
     <section class="serie-acuarela">
+    <div class="flex-acuarelas">
+  <section class="sub-serie-acuarela">
     <h3>Galway</h3>
      <div class="galeriaorden" id="Galway">
     <div class="obra">
@@ -468,7 +473,7 @@ Como artista, he centrado mi práctica en explorar cómo los recuerdos, a menudo
   <div class="obra-titulo">Monroes, 2023</div>
   <div class="obra-datos">Acuarela y tinta, 14,8 x 21 cm</div>
   <div class="obra-estado disponible">Vendido</div>
-</div>
+    </div>
   </div> 
     </div>
     <button class="ver-mas" data-target="Galway" data-expanded="false">
@@ -476,9 +481,14 @@ Como artista, he centrado mi práctica en explorar cómo los recuerdos, a menudo
 </button>
     </section>
      </div>
- 
+</section> 
+  </div>
   
-
+  
+  </section> 
+</div>
+ 
+ 
   <section class="serie">
     <div class="intro-serie">
         <div>
@@ -542,26 +552,44 @@ document.querySelectorAll('.galeria, .galeriaorden').forEach(galeria => {
 });
 
 // 2. LÓGICA DEL BOTÓN (Para desplegar/replegar)
+// 2. LÓGICA DEL BOTÓN (Para desplegar/replegar y expandir fila)
 document.querySelectorAll('.ver-mas').forEach(btn => {
   btn.addEventListener('click', () => {
     const galeriaId = btn.dataset.target;
     const galeria = document.getElementById(galeriaId);
     const obras = galeria.querySelectorAll('.obra');
     const expanded = btn.dataset.expanded === "true";
+    
+    // Buscamos si esta galería está dentro del contenedor de acuarelas
+    const contenedorFila = btn.closest('.flex-acuarelas');
 
     const limite = (galeriaId === "pueblos" || galeriaId === "Galway") ? 1 : 4;
 
     obras.forEach((obra, index) => {
       if (index >= limite) {
-        // Usamos flex o block dependiendo de tu CSS (en tu caso, .obra es block/float)
         obra.style.display = expanded ? 'none' : 'block';
       }
     });
+
+    // Si existe el contenedor de fila (acuarelas), añadimos/quitamos la clase
+    if (contenedorFila) {
+      if (!expanded) {
+        contenedorFila.classList.add('expandida');
+      } else {
+        // Solo quitamos 'expandida' si AMBAS galerías están cerradas
+        const otraGaleriaId = (galeriaId === "pueblos") ? "Galway" : "pueblos";
+        const otroBtn = document.querySelector(`[data-target="${otraGaleriaId}"]`);
+        if (otroBtn.dataset.expanded === "false") {
+          contenedorFila.classList.remove('expandida');
+        }
+      }
+    }
 
     btn.dataset.expanded = expanded ? "false" : "true";
     btn.textContent = expanded ? "Ver serie completa" : "Ver menos";
     btn.classList.toggle('activo', !expanded);
   });
+});
   
   // --- ACUARELAS: si se expande Pueblos o Galway -> full width ---
 const contAcuarelas = document.querySelector('.contenedor-acuarelas');
