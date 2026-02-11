@@ -762,3 +762,22 @@ details[open] summary::after {
         width: calc(50% - 15px) !important; /* En móvil 2 columnas */
     }
 }
+
+/*LLamada a la acción */
+.llamada {
+  background-color: #f9f9f9;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.boton-contacto {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #8ba085;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
