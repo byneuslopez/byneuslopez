@@ -227,6 +227,7 @@ font-family: "La Belle Aurore", cursive;
 .serie {
   margin-bottom: 150px;
 }
+/*
 .serie h2{
   text-align: center;
   margin-top: 20px;
@@ -244,6 +245,26 @@ font-family: "La Belle Aurore", cursive;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   
 }
+*/
+
+.serie h2 {
+   font-family: "Fraunces", serif;
+   font-size: 36px;
+   font-weight: 400;
+   text-align: left;
+   margin-bottom: 20px;
+}
+
+.serie h2::after {
+   content: "";
+   display: block;
+   width: 60px;
+   height: 2px;
+   background: #000;
+   margin-top: 10px;
+}
+
+
 
 .intro-serie p {
   width: 100%;
