@@ -283,11 +283,6 @@ Como artista, he centrado mi práctica en explorar cómo los recuerdos, a menudo
   <div class="obra-estado disponible">Vendido</div>
 </div>
   </div>   
-               
-           
-      
-      
-      
       </div>
 
   <button class="ver-mas" data-target="memes1" data-expanded="false">
@@ -411,7 +406,6 @@ Como artista, he centrado mi práctica en explorar cómo los recuerdos, a menudo
   <div class="obra-estado disponible">Vendido</div>
 </div>
   </div>   
-   
     </div>
     <button class="ver-mas" data-target="pueblos" data-expanded="false">
   Ver serie completa
@@ -537,12 +531,17 @@ Como artista, he centrado mi práctica en explorar cómo los recuerdos, a menudo
 
 document.querySelectorAll('.ver-mas').forEach(btn => {
   btn.addEventListener('click', () => {
-    const galeria = document.getElementById(btn.dataset.target);
+    const galeriaId = btn.dataset.target;
+    const galeria = document.getElementById(galeriaId);
     const obras = galeria.querySelectorAll('.obra');
     const expanded = btn.dataset.expanded === "true";
 
+    // Determinamos el límite según el ID de la galería
+    // Si es una de las de acuarelas, el límite es 1, si no, es 4.
+    const limite = (galeriaId === "pueblos" || galeriaId === "Galway") ? 1 : 4;
+
     obras.forEach((obra, index) => {
-      if (index >= 4) {
+      if (index >= limite) {
         obra.style.display = expanded ? 'none' : 'block';
       }
     });
