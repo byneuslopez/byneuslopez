@@ -732,6 +732,26 @@ details[open] summary::after {
   }
 }
 
+/* ACUARELAS PLEGADAS: 2 columnas (más grande) */
+.contenedor-acuarelas:not(.acuarelas-full) .galeriaorden .obra {
+  width: calc(50% - 15px);
+}
+
+/* Tablet: también 2 columnas */
+@media (max-width: 1024px) {
+  .contenedor-acuarelas:not(.acuarelas-full) .galeriaorden .obra {
+    width: calc(50% - 15px);
+  }
+}
+
+/* Móvil: 1 columna */
+@media (max-width: 768px) {
+  .contenedor-acuarelas:not(.acuarelas-full) .galeriaorden .obra {
+    width: 100%;
+  }
+}
+
+
 /* Ajuste de las obras dentro de la galería desplegada */
 .flex-acuarelas.expandida .galeriaorden .obra {
     width: calc(25% - 15px) !important; /* Vuelve a 4 columnas por fila como el resto */
