@@ -427,3 +427,29 @@ font-family: "La Belle Aurore", cursive;
   right: 20px;
 }
 
+
+/* Botón ver más */
+.ver-mas {
+  margin: 30px auto 0;
+  display: block;
+  padding: 10px 25px;
+  border: 1px solid #688b6a;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  color: #688b6a;
+  border-radius: 20px;
+  
+  
+}
+
+.ver-mas:hover {
+  background-color: #688b6a;
+  color: #fff;
+}
+
+.ver-mas.activo {
+  background-color: #333;
+  color: #fff;}
+/*

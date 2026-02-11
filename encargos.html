@@ -78,8 +78,8 @@
     <img src="img/encargos-oleo/3.jpeg" alt="Obra 1" data-caption="30x40 cm – Óleo">
     <img src="img/encargos-oleo/2.jpg" alt="Obra 1" data-caption="40x40 cm – Óleo">
     <img src="img/encargos-oleo/1.jpg" alt="Obra 1" data-caption="40x40 cm – Óleo">
-   
     </div>
+    <!--<button class="ver-mas">Ver más</button>-->
   </section>
 
   <section class="serie">
@@ -100,8 +100,8 @@ A partir de 50€</p>
       <img src="img/encargos-acuarelas/6.jpg" alt="Obra 11" data-caption="A4 – acuarela">
     <img src="img/encargos-acuarelas/7.jpg" alt="Obra 11" data-caption="33x41 cm – Acuarela">
      <img src="img/encargos-acuarelas/8.png" alt="Obra 11" data-caption="A4 – acuarela">
-   
     </div>
+    <button class="ver-mas">Ver más</button>
   </section>
 
   <!-- Repite para las otras 3 series -->
@@ -122,6 +122,7 @@ A partir de 50€</p>
    <img src="img/encargos-tinta/6.jpg" alt="Obra 11" data-caption="A4 – acuarela y tinta">
     <img src="img/encargos-tinta/7.jpg" alt="Obra 11" data-caption="A4 – Acuarela y tinta">
     </div>
+    <button class="ver-mas">Ver más</button>
   </section>
 
   <section class="serie" >
@@ -143,6 +144,7 @@ A partir de 50€</p>
         <img src="img/encargos-otros/9.jpg" alt="Obra 11" data-caption="Personalización">
         <img src="img/encargos-otros/10.jpg" alt="Obra 11" data-caption="Personalización">
     </div>
+    <button class="ver-mas">Ver más</button>
   </section>
   
    <section class="llamada">
@@ -234,6 +236,30 @@ A partir de 50€</p>
     const images = document.querySelectorAll('img:not([loading])');
     images.forEach(img => img.setAttribute('loading', 'lazy'));
   });
+
+    //
+    //Ver más 
+    document.querySelectorAll('.galeria').forEach(galeria => {
+  const imagenes = galeria.querySelectorAll('img');
+  const boton = galeria.nextElementSibling;
+
+  if (imagenes.length > 4 && boton?.classList.contains('ver-mas')) {
+    imagenes.forEach((img, i) => {
+      if (i >= 4) img.style.display = 'none';
+    });
+
+    let expandido = false;
+
+    boton.addEventListener('click', () => {
+      expandido = !expandido;
+      imagenes.forEach((img, i) => {
+        if (i >= 4) img.style.display = expandido ? 'block' : 'none';
+      });
+      boton.textContent = expandido ? 'Ver menos' : 'Ver más';
+      boton.classList.toggle('activo', expandido);
+    });
+  }
+});
 
 </script>
 
