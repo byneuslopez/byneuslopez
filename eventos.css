@@ -594,3 +594,131 @@ font-family: "La Belle Aurore", cursive;
   border-radius: 12px;
 }
 
+/* === Carousel (estética similar a tus bloques) === */
+.carousel {
+  position: relative;
+  margin: 10px auto 35px;
+  width: 100%;
+}
+
+/* Carrusel: no recortar verticales, mantener proporción */
+
+/* --- FIX carrusel: necesario para que el translateX funcione --- */
+.carousel-viewport{
+  overflow: hidden;        /* CLAVE */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  background: #fff;
+  position:relative; 
+}
+
+.carousel-track{
+  display: flex;           /* CLAVE */
+  transition: transform 0.35s ease;  /* CLAVE */
+  will-change: transform;
+}
+
+.carousel-track img{
+  width: 100%;
+  flex: 0 0 100%;
+  height: 360px;        /* o 240px en móvil como ya tienes */
+  object-fit: contain;  /* NO recorta */
+  background:  #f9f9f9;  
+  display: block;   
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(4px);
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  font-size: 26px;
+  line-height: 1;
+  color: #333;
+  z-index: 2;
+}
+
+.carousel-btn.prev { left: 12px; }
+.carousel-btn.next { right: 12px; }
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: 1px solid #688b6a;
+  background: transparent;
+  cursor: pointer;
+}
+
+.carousel-dot.active {
+  background: #688b6a;
+}
+
+@media (max-width: 768px) {
+  .carousel-track img { height: 240px; }
+}
+
+/* Lightbox */
+.lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background: rgba(0,0,0,0.85);
+  z-index: 2000;
+  align-items:center;
+  justify-content:center;
+  padding: 24px;
+}
+
+.lightbox img{
+  max-width: 92vw;
+  max-height: 86vh;
+  object-fit: contain;
+  background:#fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.lightbox-close{
+  position:absolute;
+  top: 18px;
+  right: 18px;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255,255,255,0.85);
+  font-size: 18px;
+}
+
+
+.carousel-viewport::after{
+  content:"Ver en grande";
+  position:absolute;
+  right: 14px;
+  bottom: 14px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  color:#333;
+  background: rgba(255,255,255,0.85);
+  opacity:0;
+  transition: opacity .2s ease;
+}
+
+.carousel-viewport:hover::after{ opacity:1; }

@@ -94,6 +94,22 @@
          </div>
     </section>
    
+   <div class="carousel" data-carousel>
+  <button class="carousel-btn prev" type="button" aria-label="Anterior" data-carousel-prev>‹</button>
+
+  <div class="carousel-viewport">
+    <div class="carousel-track">
+      <img src="img/eventos-cuadros/16.jpg" alt="Acuarelas en evento 1" loading="lazy">
+      <img src="img/eventos-cuadros/15.png" alt="Acuarelas en evento 2" loading="lazy">
+      <img src="img/eventos-cuadros/14.jpg" alt="Acuarelas en evento 3" loading="lazy">
+    </div>
+  </div>
+
+  <button class="carousel-btn next" type="button" aria-label="Siguiente" data-carousel-next>›</button>
+
+  <div class="carousel-dots" data-carousel-dots></div>
+</div>
+   
     <h2>Preguntas frecuentes</h2>
   <div class="faq animado">
       <div class="faq-item">
@@ -169,6 +185,22 @@
       </div>
     </section>
    
+   <div class="carousel" data-carousel>
+  <button class="carousel-btn prev" type="button" aria-label="Anterior" data-carousel-prev>‹</button>
+
+  <div class="carousel-viewport">
+    <div class="carousel-track">
+      <img src="img/eventos-cuadros/16.jpg" alt="Acuarelas en evento 1" loading="lazy">
+      <img src="img/eventos-cuadros/15.png" alt="Acuarelas en evento 2" loading="lazy">
+      <img src="img/eventos-cuadros/14.jpg" alt="Acuarelas en evento 3" loading="lazy">
+    </div>
+  </div>
+
+  <button class="carousel-btn next" type="button" aria-label="Siguiente" data-carousel-next>›</button>
+
+  <div class="carousel-dots" data-carousel-dots></div>
+</div>
+   
     <h2>Preguntas frecuentes</h2>
   <div class="faq animado">
       <div class="faq-item">
@@ -226,6 +258,23 @@
         </div>
     </section>
     
+    
+   <div class="carousel" data-carousel>
+  <button class="carousel-btn prev" type="button" aria-label="Anterior" data-carousel-prev>‹</button>
+
+  <div class="carousel-viewport">
+    <div class="carousel-track">
+      <img src="img/eventos/2.JPG" alt="Acuarelas en evento 1" loading="lazy">
+      <img src="img/eventos/4.jpg" alt="Acuarelas en evento 2" loading="lazy">
+      <img src="img/eventos/5.jpg" alt="Acuarelas en evento 3" loading="lazy">
+    </div>
+  </div>
+
+  <button class="carousel-btn next" type="button" aria-label="Siguiente" data-carousel-next>›</button>
+
+  <div class="carousel-dots" data-carousel-dots></div>
+</div>
+   
     <!--Video-->
  <section class="bloque-hero animado" style="background-image: url('img/eventos/8.PNG');">
  <div class="hero-texto">
@@ -250,6 +299,13 @@
       <p>Haz clic en el botón de contacto para hablar sin compromiso.</p>
       <a class="boton-contacto" href="index.html#contact">Contáctame</a>
     </section>
+    
+    <!-- Modal para ver en grande -->
+<div id="lightbox" class="lightbox" aria-hidden="true">
+  <button class="lightbox-close" type="button" aria-label="Cerrar">✕</button>
+  <img id="lightbox-img" alt="">
+</div>
+
 </main>
 
 <script>
@@ -269,53 +325,76 @@ document.addEventListener("DOMContentLoaded", () => {
     topbar.style.display = "flex";
   });
 
-  // 2. MODAL GALERÍA (solo si hay galería)
-  const modal = document.getElementById('modal');
-  const modalImg = document.getElementById('imagen-modal');
-  const pieFoto = document.getElementById('pie-foto');
-  const cerrar = document.getElementById('cerrar');
-  let imagenesGaleria = [];
-  let imagenActual = 0;
+  // 5. CAROUSELS (dentro de DOMContentLoaded)
+document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+  const track = carousel.querySelector('.carousel-track');
+  const slides = Array.from(track.querySelectorAll('img'));
+  const btnPrev = carousel.querySelector('[data-carousel-prev]');
+  const btnNext = carousel.querySelector('[data-carousel-next]');
+  const dotsWrap = carousel.querySelector('[data-carousel-dots]');
 
-  function abrirImagen(e, selectorGaleria) {
-    const galeria = e.target.closest(selectorGaleria);
-    imagenesGaleria = Array.from(galeria.querySelectorAll('img'));
-    imagenActual = imagenesGaleria.indexOf(e.target);
-    mostrarImagen(imagenActual);
+  if (slides.length <= 1) {
+    btnPrev.style.display = 'none';
+    btnNext.style.display = 'none';
+    return;
   }
 
-  document.querySelectorAll('.galeria img, .galeriaorden img').forEach(img =>
-    img.addEventListener('click', e => {
-      const selector = e.target.closest('.galeriaorden') ? '.galeriaorden' : '.galeria';
-      abrirImagen(e, selector);
-    })
-  );
+  let index = 0;
 
-  function mostrarImagen(index) {
-    const img = imagenesGaleria[index];
-    if (!img) return;
-    modalImg.src = img.src;
-    pieFoto.textContent = img.dataset.caption || '';
-    modal.style.display = "flex";
+  const dots = slides.map((_, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    b.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(b);
+    return b;
+  });
+
+  function render() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
   }
 
-  cerrar?.addEventListener('click', () => modal.style.display = "none");
-  modal?.addEventListener('click', e => {
-    if (e.target === modal) modal.style.display = "none";
-  });
+  function goTo(i) {
+    index = (i + slides.length) % slides.length;
+    render();
+  }
 
-  document.getElementById('prev')?.addEventListener('click', e => {
-    e.stopPropagation();
-    imagenActual = (imagenActual - 1 + imagenesGaleria.length) % imagenesGaleria.length;
-    mostrarImagen(imagenActual);
-  });
+  btnPrev.addEventListener('click', () => goTo(index - 1));
+  btnNext.addEventListener('click', () => goTo(index + 1));
 
-  document.getElementById('next')?.addEventListener('click', e => {
-    e.stopPropagation();
-    imagenActual = (imagenActual + 1) % imagenesGaleria.length;
-    mostrarImagen(imagenActual);
-  });
+  render(); // ✅ IMPORTANTÍSIMO
+});
+  
+  // Lightbox para imágenes del carrusel
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxClose = document.querySelector('.lightbox-close');
 
+function openLightbox(src, alt){
+  if(!lightbox || !lightboxImg) return;
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || '';
+  lightbox.style.display = 'flex';
+  lightbox.setAttribute('aria-hidden', 'false');
+}
+
+function closeLightbox(){
+  lightbox.style.display = 'none';
+  lightbox.setAttribute('aria-hidden', 'true');
+  lightboxImg.src = '';
+}
+
+document.querySelectorAll('.carousel-track img').forEach(img=>{
+  img.style.cursor = 'zoom-in';
+  img.addEventListener('click', ()=> openLightbox(img.src, img.alt));
+});
+
+lightboxClose?.addEventListener('click', closeLightbox);
+lightbox?.addEventListener('click', (e)=>{ if(e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeLightbox(); });
+  
+  
   // 3. FAQ INTERACTIVO
   document.querySelectorAll('.faq-toggle').forEach(button => {
     button.addEventListener('click', () => {
@@ -353,6 +432,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const images = document.querySelectorAll('img:not([loading])');
     images.forEach(img => img.setAttribute('loading', 'lazy'));
   });
+  
+ 
 </script>
 
 
