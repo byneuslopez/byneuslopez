@@ -706,6 +706,28 @@ font-family: "La Belle Aurore", cursive;
   font-size: 18px;
 }
 
+.lightbox-arrow{
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255,255,255,0.85);
+  font-size: 28px;
+  line-height: 1;
+  color: #333;
+}
+
+.lightbox-arrow.prev{ left: 18px; }
+.lightbox-arrow.next{ right: 18px; }
+
+@media (max-width: 768px){
+  .lightbox-arrow.prev{ left: 10px; }
+  .lightbox-arrow.next{ right: 10px; }
+}
 
 .carousel-viewport::after{
   content:"Ver en grande";
