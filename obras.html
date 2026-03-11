@@ -548,6 +548,15 @@
   let imagenesGaleria = [];
   let imagenActual = 0;
 
+    // Desactivar clic derecho
+document.addEventListener("contextmenu", function(e){
+  e.preventDefault();
+});
+
+// Evitar arrastrar imágenes
+document.querySelectorAll("img").forEach(img=>{
+  img.setAttribute("draggable","false");
+});
  // 1. OCULTACIÓN INICIAL (Al cargar la página)
 document.querySelectorAll('.galeria, .galeriaorden').forEach(galeria => {
   const obras = galeria.querySelectorAll('.obra');

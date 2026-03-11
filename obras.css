@@ -781,3 +781,29 @@ details[open] summary::after {
   border-radius: 5px;
   font-weight: bold;
 }
+
+/* Evita selección y arrastre de imágenes */
+img{
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+/* Capa protectora sobre imágenes */
+.img-protect{
+  position: relative;
+  display: inline-block;
+}
+
+.img-protect img{
+  display:block;
+}
+
+.img-protect::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:transparent;
+}
