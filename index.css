@@ -929,11 +929,15 @@ html, body {
 .bio-texto {
   flex: 1;
   padding: 30px;
-}
+ }
+
 .bio-texto i {
   color: #818181;
 }
 
+.bio-texto p {
+   text-align:justify
+}
 
 .redes a {
   color: #8ba085;
