@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Neus López – Pintora</title>
-    <link rel="canonical" href="https://www.byneuslopez.com/"/>
+  <title>Sobre mí – Neus López</title>
+   <link rel="canonical" href="https://www.byneuslopez.com/sobremi"/>
   <meta name="description" content="Descubre las obras de Neus López: cuadros, acuarelas, murales, ilustraciones personalizadas y proyectos artísticos únicos.">
 
 
@@ -259,28 +259,6 @@
       topbar.style.display = "flex";
     });
 
-    // Abrir/cerrar modal vídeo
-    const abrir = document.getElementById("abrir-video");
-    const cerrar = document.getElementById("cerrar-video");
-    const modal = document.getElementById("video-modal");
-    const iframe = document.getElementById("iframe-video");
-
-    abrir.addEventListener("click", () => {
-      modal.style.display = "flex";
-      iframe.src += "?autoplay=1";
-    });
-
-    cerrar.addEventListener("click", () => {
-      modal.style.display = "none";
-      iframe.src = iframe.src.replace("?autoplay=1", "");
-    });
-
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.style.display = "none";
-        iframe.src = iframe.src.replace("?autoplay=1", "");
-      }
-    });
 
     // Mostrar botón scroll
     const backToTop = document.querySelector(".back-to-top");
