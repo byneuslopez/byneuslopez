@@ -45,7 +45,7 @@
       <ul>
         <li><a href="index.html" >Inicio</a></li>
         <li><a href="sobremi.html" class="activo">Sobre mí</a></li>
-        <li><a href="#contact">Contacto</a></li>
+        <li><a href="index.html#contact">Contacto</a></li>
         <li><a href="obras.html">Obras</a></li>
         <li><a href="encargos.html">Encargos</a></li>
         <li><a href="murales.html">Murales</a></li>
@@ -147,8 +147,8 @@
         <button class="expo-toggle">Ver más</button>
       </div>
       <div class="expo-item-contenido">
-        <p>Espacio expositivo `"En vitrina", Universitat Politècnica de València</p>
-        <img src="img/sobremi/expo2.png" alt="Cartel exposición">
+        <p>Espacio expositivo "En vitrina", Universitat Politècnica de València</p>
+        <img src="img/sobremi/expo1.jpg" alt="Cartel exposición">
    
       </div>
     </div>
@@ -160,7 +160,7 @@
       </div>
       <div class="expo-item-contenido">
         <p>Espacio expositivo T4, Universitat Politècnica de València</p>
-        <img src="img/sobremi/expo2.png" alt="Cartel exposición">
+        <img src="img/sobremi/expo0.jpg" alt="Cartel exposición">
    
       </div>
     </div>
@@ -173,7 +173,7 @@
       <div class="expo-item-contenido">
         <p>Sala de exposiciones del Teatro Wagner, Aspe</p>
          <p>Del 10 al 29 de enero de 2026</p>
-       <img src="img/sobremi/expo2.png" alt="Cartel exposición">
+       <img src="img/sobremi/expo00.jpg" alt="Cartel exposición">
    
        </div>
     </div>
@@ -369,6 +369,7 @@
     const cerrarMenu = document.getElementById('cerrar-menu');
     const toggles = document.querySelectorAll(".expo-toggle");
 
+    
 toggles.forEach(btn => {
   btn.addEventListener("click", () => {
     const contenido = btn.closest(".expo-item").querySelector(".expo-item-contenido");

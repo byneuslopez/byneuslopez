@@ -181,156 +181,6 @@ section {
   z-index: 101;
 }
 
-
-/**PRUEBAS**/
-.hero-video {
-  background: url('img/fondo-video.jpg') center/cover no-repeat;
-  padding: 100px 20px;
-  text-align: center;
-  color: white;
-  position: relative;
-}
-
-.hero-contenido {
-  max-width: 800px;
-  margin: 0 auto;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 40px 20px;
-  border-radius: 12px;
-}
-
-.hero-contenido h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero-contenido p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-
-.boton-video {
-  padding: 12px 24px;
-  background-color: transparent;
-  color: #fff;
-  border: 2px solid white;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-    font-size: 20px;
-}
-
-.boton-video:hover {
-  background-color: white;
-  color: #222;
-
-}
-
-/* Modal */
-.video-modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100vw; height: 100vh;
-  background-color: rgba(0,0,0,0.8);
-  align-items: center;
-  justify-content: center;
-}
-
-.video-modal-contenido {
-  position: relative;
-  max-width: 90%;
-  width: 800px;
-  padding-top: 56.25%; /* 16:9 */
-}
-
-.video-contenedor {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.video-contenedor iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 10px;
-}
-
-.cerrar-modal {
-  position: absolute;
-  top: 15px;
-  right: 25px;
-  color: white;
-  font-size: 32px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.bloque-header {
-  padding: 60px 20px;
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 20px;
-  background-image: url('img/header.jpg');
-  background-size: cover;      /* Ajusta la imagen para cubrir el bloque sin deformarla */
-  background-position:top; /* Centra la imagen */
-  background-repeat: no-repeat;
-  
-  
-    position: relative;
-  text-align: center;
-  color: white;
-  overflow: hidden;
-  z-index: 1;
-  margin-bottom: 50px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.bloque-header::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
- z-index: 1;
-  background-color: rgba(64, 55, 78, 0.09);
-  backdrop-filter: blur(3px);
-    border-radius: 20px;
-}
-
-.header-contenedor {
- 
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  max-width: 1200px;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.header-texto {
-  flex: 1;
-  text-align: center;
-  color: white;
-   z-index: 99;
-}
-
-.header-texto h1.nombre {
-  font-size: 3rem;
-  color: rgba(139, 160, 133, 0);
-  -webkit-text-stroke: 2px #fff;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-
 .typed-text-output {
   font-size: 1.5rem;
   font-weight: 300;
@@ -347,50 +197,6 @@ section {
   flex-wrap: wrap;
 }
 
-.boton-descarga {
-  padding: 12px 24px;
-  border: 2px solid #fff;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.3s;
-}
-
-.boton-descarga:hover {
-  background: #fff;
-  color: #333;
-}
-
-.btn-play {
-  width: 30px;
-  height: 30px;
-  background: white;
-  border: none;
-  border-radius: 50%;
-  position: relative;
-  cursor: pointer;
-}
-.btn-play:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
-}
-
-
-.btn-play span {
-  position: absolute;
-  top: 50%; left: 60%;
-  transform: translate(-50%, -50%);
-  width: 0; height: 0;
-  border-left: 15px solid #5a5a5a;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-}
-
-.play-texto {
-  margin-left: 10px;
-  font-size: 1rem;
-  color: white;
-}
 
 .seccion-qualificacion {
   background-color: #fcfcfc;
@@ -816,27 +622,7 @@ textarea:focus {
 
 
 
-.trayectoria-contenedor {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  align-items: stretch; 
-  margin-left: 50px;
-  
-}
 
-.columna-qualificacion {
-   flex: 1 1 45%;
-  max-width: 48%;
-  min-width: 300px;
-  display: flex; /* NUEVO */
-  flex-direction: column; /* NUEVO */
-  min-height: 200px; /* ← Ajusta si es necesario */
-  margin-bottom: 0;
-  
-  text-align: left;
-}
 
 .formacion-contenido {
   min-width: 250px;
@@ -877,24 +663,12 @@ textarea:focus {
   transition: all 0.5s ease;
 }
 
-.flecha {
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
 
 .flecha.activa {
-  transform: rotate(180deg);
+  transform: rotate(-90deg);
 }
 
-.formacion-btn {
-  background: transparent;
-  border: none;
-  color: #8ba085;
-  font-size: 20px;
-  cursor: pointer;
-  padding: 0;
-  margin-bottom: 17px;
-}
+
 
 .flecha {
   display: inline-block;
