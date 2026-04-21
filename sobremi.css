@@ -220,7 +220,7 @@ section {
   position: static;
   transform: none;
   font-family: "Fraunces", serif;
-  font-size: 2.5rem;
+    font-size: 3rem;
   font-weight: 300;
   color: #222;
   text-align: left;
@@ -376,10 +376,7 @@ section {
     text-align: center;
   }
 
-  .titulo-frontal {
-    font-size: 2rem;
-        text-align: center;
-  }
+
   
   .titulo-bloque {
     text-align: center;
@@ -820,7 +817,7 @@ html, body {
 .sobre-titulo-v2 h2,
 .sobre-editorial-texto h2 {
   font-family: "Fraunces", serif;
-  font-size: 3.4rem;
+  font-size: 3rem;
   font-weight: 300;
   line-height: 1.02;
   color: #222;
