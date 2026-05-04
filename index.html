@@ -86,133 +86,144 @@
 </div>
     <!-- Video Modal End -->
 
-<section class="bloque-header" id="home">
-  <div class="header-contenedor">
-    <div class="header-imagen">
-    </div>
-    <div class="header-texto">
-      <h1 class="nombre">Neus López</h1>
-       <h3>Artista plástica</h3>
-      <div class="botones-header">
-        <a href="img/docs/cv.pdf" class="boton-descarga" download>Descargar CV</a>
-         <h5 class="play-texto">Ver vídeo</h5>
-        <button class="btn-play" id="abrir-video" aria-label="Abrir vídeo" title="Ver vídeo">
-        <span></span></button>
- 
-      </div>
+<section class="home-layer layer-1 home-hero-full" id="home">
+  <div class="home-hero-full-img">
+    <img src="img/home/2.jpg" alt="Obra de Neus López">
+  </div>
+
+  <div class="home-hero-overlay">
+    <span class="home-etiqueta">Artista plástica</span>
+    <h1>Neus López</h1>
+
+    <div class="home-hero-botones">
+      <a href="img/docs/cv.pdf" class="home-btn" download>Descargar CV</a>
+
+      <button class="home-video-btn" id="abrir-video">
+        <span class="play-icon"></span>
+        <span class="video-text">Ver vídeo</span>
+      </button>
     </div>
   </div>
 </section>
 
- <!-- 🔹 Presentación con imagen -->
-  <section class="presentacion" id="sobremi">
-    <div class="bio-imagen">
-      <img src="img/fotoperfil.png" alt="Foto de Neus López" class="foto-perfil">
-      <div class="bio-texto">
-        <h2>Sobre mí</h2>
-        <p><i>Neus López Pérez (Valencia, 2003)</i></p>
-        <p>Nace en Valencia en 2003 y crece en Aspe (Alicante). Cursa el Grado en Bellas 
-        Artes en la Universitat Politècnica de València, donde se especializa en la rama pintura. Durante su formación, ha sido seleccionada para realizar un curso en ATU, Galway (Irlanda).</p>
-         <p>Su práctica artística se centra en la exploración interdisciplinar de la identidad a través de la memoria, profundizando en su carácter mutable y en la influencia del entorno en
-          la construcción del recuerdo. Para ello, emplea diversas técnicas como collage, óleo o xilografía entre otros </p>
-         <p>Ha participado en distintos proyectos profesionales que abarcan desde la realización de murales urbanos hasta 
-         servicios de arte en directo para eventos, así como encargos de pintura e ilustración. Su obra ha formado parte de diversas exposiciones, entre las que destacan una muestra colectiva en Aspe junto a otro artista local y su primera exposición individual, que tendrá lugar en Valencia en mayo de 2026.</p>
-       </div>
-    </div>
-     <section class="llamada">
-      <a class="boton-contacto" href="sobremi.html">Leer más</a>
-    </section>
-  </section>
+<section class="home-layer layer-2 home-presentacion" id="sobremi">
+  <div class="home-presentacion-img reveal-right">
+    <img src="img/home/6.jpg" alt="Neus López en su estudio">
+  </div>
+
+  <div class="home-presentacion-texto">
+    <span class="home-etiqueta">Sobre mí</span>
+    <h2>Una práctica artística entre memoria, identidad y pintura</h2>
+    <p>
+      Hola! Soy Neus López, artista plástica formada en Bellas Artes por la UPV. En mi producción personal me interesa tratar temas como la memoria,
+      el archivo personal y la relación entre identidad, imagen y entorno. Para ello, trabajo con óleo, collage, acuarela y otros lenguajes visuales.
+  
+    </p>
+    <p>
+      También trabajo profesionalmente como artista especializada en LiveArt y realizo todo tipo de encargos artísticos como acuarelas, cuadros, murales y otros proyectos.
+    </p>
+
+    <a href="sobremi.html" class="home-btn home-btn-dark">Leer más</a>
+  </div>
+</section>
 <!--
 /**ESTUDIOS**/
 -->
 
 
         <!--Servicios--> 
-<section class="seccion-servicios" id="service">
-  <div class="servicios-titulo">
-    <h2 class="titulo-frontal">Qué encontrarás aqui:</h2>
+<section class="home-layer layer-3 home-servicios" id="service">
+  <div class="home-servicios-titulo">
+    <span class="home-etiqueta verde">Servicios</span>
+    <h2>Qué encontrarás aquí:</h2>
   </div>
 
-  <div class="servicios-grid">
-    <div class="servicio">
-      <div class="servicio-cabecera">
-        <div class="icono">🖼️</div>
-        <h4>Obras originales</h4>
-      </div>
-      <p>Visita mi portfolio, allí podrás encontrar una selección de lo que hago y mis series de cuadros.</p>
-      <a href="obras.html" class="enlace-servicio">Ver más</a>
-    </div>
+  <div class="home-servicios-grid reveal-left">
 
-    <div class="servicio">
-      <div class="servicio-cabecera">
-        <div class="icono">🎨</div>
-        <h4>Encargos</h4>
+    <a href="obras.html" class="home-servicio-card">
+      <img src="img/home/8.jpg" alt="Obras originales">
+      <div class="home-servicio-info">
+        <h3>Obras originales</h3>
+        <p>Una selección de mi producción.</p>
       </div>
-      <p>Retratos, paisajes y todo tipo de motivos hechos por encargo en  distintas técnicas.</p>
-      <a href="encargos.html" class="enlace-servicio">Ver más</a>
-    </div>
+    </a>
 
-    <div class="servicio">
-      <div class="servicio-cabecera">
-        <div class="icono">🖌️</div>
-        <h4>Murales</h4>
+    <a href="encargos.html" class="home-servicio-card">
+      <img src="img/encargos-acuarelas/1.png" alt="Encargos personalizados">
+      <div class="home-servicio-info">
+        <h3>Encargos</h3>
+        <p>Retratos, paisajes e ilustraciones personalizadas.</p>
       </div>
-      <p>Visita mis proyectos en gran formato.</p>
-      <a href="murales.html" class="enlace-servicio">Ver más</a>
-    </div>
+    </a>
 
-    <div class="servicio">
-      <div class="servicio-cabecera">
-        <div class="icono">📸</div>
-        <h4>Arte para eventos</h4>
+    <a href="murales.html" class="home-servicio-card">
+      <img src="img/murales/9.jpg" alt="Murales">
+      <div class="home-servicio-info">
+        <h3>Murales</h3>
+        <p>Mis proyectos artísticos en gran formato.</p>
       </div>
-      <p>Aquí podrás ver ejemplos de mi trabajo haciendo LiveArt y tener más información sobre los tipos de servicios que ofrezco.</p>
-      <a href="eventos.html" class="enlace-servicio">Ver más</a>
-    </div>
+    </a>
+
+    <a href="eventos.html" class="home-servicio-card">
+      <img src="img/eventos-cuadros/14.jpg" alt="Arte para eventos">
+      <div class="home-servicio-info">
+        <h3>Arte para eventos</h3>
+        <p>Live Art y pintura en directo para momentos especiales.</p>
+      </div>
+    </a>
+
   </div>
 </section>
 
-<section class="seccion-contacto" id="contact">
-  <div class="contacto-titulo">
-    <h1 class="titulo-fondo">Contacto</h1>
-    <h2 class="titulo-frontal">Contacto</h2>
+        <!--Contacto--> 
+<section class="home-layer layer-4 home-contacto" id="contact">
+  <div class="home-contacto-texto">
+    <span class="home-etiqueta verde">Contacto</span>
+    <h2>¿Hablamos?</h2>
+    <p>
+      Si quieres más información sobre mi trabajo, proponer una colaboración
+      o consultar un presupuesto personalizado, puedes escribirme en el siguiente formulario.
+    </p>
   </div>
 
-  <div class="formulario-contacto">
-  <form action="https://formsubmit.co/info.neuslopez@gmail.com" method="POST">
-    <input type="hidden" name="_captcha" value="true">
-  <input type="text" name="_honey" style="display:none">
-  <input type="hidden" name="_template" value="table">
-  
-    <input type="text" name="name" placeholder="Nombre" required>
-  <div class="fila-formulario">
-    <input type="email" name="email" placeholder="Tú email" required>
-  <input type="tel" name="telefono" placeholder="Teléfono (Opcional)">
-  </div>
-  <input type="text" name="subject" placeholder="Asunto" required>
-  <textarea name="message" rows="5" placeholder="Mensaje" required></textarea>
-  <button type="submit" class="boton-enviar">Enviar</button>
-</form>
-  </div>
-  
-</section>
+  <div class="home-contacto-form">
+    <form action="https://formsubmit.co/info.neuslopez@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="text" name="_honey" style="display:none">
+      <input type="hidden" name="_template" value="table">
 
-<section class="seccion-rrss" >
+      <input type="text" name="name" placeholder="Nombre" required>
+
+      <div class="fila-formulario">
+        <input type="email" name="email" placeholder="Tu email" required>
+        <input type="tel" name="telefono" placeholder="Teléfono (opcional)">
+      </div>
+
+      <input type="text" name="subject" placeholder="Asunto" required>
+      <textarea name="message" rows="5" placeholder="Mensaje" required></textarea>
+
+      <button type="submit" class="home-contacto-btn">Enviar mensaje</button>
+    </form>
+  </div>
+  
+<div class="home-redes">
   <div class="redes-titulo">
     <h2 class="titulo">También puedes encontrarme en mis redes sociales: </h2>
   </div>
   <div class="redes">
-    <a href="https://www.instagram.com/by.neuslopez/" target="blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.facebook.com/neus.lopez.353" target="blank"><i class="fa-brands fa-facebook"></i></a>
-        <a href="https://www.tiktok.com/@by.neuslopez" target="blank"><i class="fa-brands fa-tiktok"></i></a>
-        <a href="https://t.me/byneuslopez" target="blank"><i class="fa-brands fa-telegram"></i></a>
-       <a href="https://www.youtube.com/@By.neuslopez" target="blank"><i class="fa-brands fa-youtube"></i></a>
+    <a href="https://www.instagram.com/by.neuslopez/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/neus.lopez.353" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.tiktok.com/@by.neuslopez" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://t.me/byneuslopez" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+       <a href="https://www.youtube.com/@By.neuslopez" target="_blank"><i class="fa-brands fa-youtube"></i></a>
   </div>
    <!-- Back to Top -->
     <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
+  </div>
 </section>
+
+
     </div><script>
   document.addEventListener("DOMContentLoaded", function () {
     const sidebar = document.getElementById('sidebar');
@@ -285,6 +296,21 @@
 
     // Desactivar clic derecho
     document.addEventListener('contextmenu', e => e.preventDefault());
+ 
+  const elementosAnimados = document.querySelectorAll(".reveal-left, .reveal-right, .reveal-up");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("reveal-visible");
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+elementosAnimados.forEach(el => observer.observe(el));
+  
   });
 </script>
 
