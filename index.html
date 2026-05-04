@@ -244,28 +244,33 @@
     });
 
     // Abrir/cerrar modal vídeo
-    const abrir = document.getElementById("abrir-video");
-    const cerrar = document.getElementById("cerrar-video");
-    const modal = document.getElementById("video-modal");
-    const iframe = document.getElementById("iframe-video");
+   const abrir = document.getElementById("abrir-video");
+const cerrar = document.getElementById("cerrar-video");
+const modal = document.getElementById("video-modal");
+const iframe = document.getElementById("iframe-video");
 
-    abrir.addEventListener("click", () => {
-      modal.style.display = "flex";
-      iframe.src += "?autoplay=1";
-    });
+if (abrir) {
+  abrir.addEventListener("click", () => {
+    modal.style.display = "flex";
+    iframe.src += "?autoplay=1";
+  });
+}
 
-    cerrar.addEventListener("click", () => {
+if (cerrar) {
+  cerrar.addEventListener("click", () => {
+    modal.style.display = "none";
+    iframe.src = iframe.src.replace("?autoplay=1", "");
+  });
+}
+
+if (modal) {
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
       modal.style.display = "none";
       iframe.src = iframe.src.replace("?autoplay=1", "");
-    });
-
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.style.display = "none";
-        iframe.src = iframe.src.replace("?autoplay=1", "");
-      }
-    });
-
+    }
+  });
+}
     // Mostrar botón scroll
     const backToTop = document.querySelector(".back-to-top");
     window.addEventListener("scroll", function () {
