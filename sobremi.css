@@ -1188,7 +1188,7 @@ html, body {
 }
 
 .separador-visual {
-  margin: 70px 0 90px;
+  margin: 0 0 0;
 }
 
 .separador-visual img {
@@ -1202,7 +1202,7 @@ html, body {
 
 @media (max-width: 768px) {
   .separador-visual {
-    margin: 45px 0 60px;
+    margin: 0 0 60px;
   }
 
   .separador-visual img {
