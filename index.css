@@ -814,26 +814,37 @@ transition: transform 0.3s ease;
 .home-servicio-card:hover .home-servicio-info {
   transform: translateY(0);
 }
-
-/* CONTACTO HOME EDITORIAL */
-.home-contacto {
+/* CONTACTO CON HTML ANTIGUO */
+.seccion-contacto {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: 50px;
   align-items: start;
   padding: 90px 50px;
   background: #f7f8f9;
+  border-radius: 0;
+  text-align: left;
 }
 
-.home-contacto-texto h2 {
+.contacto-titulo {
+  margin-bottom: 0;
+}
+
+.contacto-titulo .titulo-fondo {
+  display: none;
+}
+
+.contacto-titulo .titulo-frontal {
+  position: static;
+  transform: none;
   font-family: "Fraunces", serif;
   font-size: 3rem;
   font-weight: 300;
   color: #222;
-  margin-bottom: 20px;
+  text-align: left;
 }
 
-.home-contacto-texto h2::after {
+.contacto-titulo .titulo-frontal::after {
   content: "";
   display: block;
   width: 60px;
@@ -842,28 +853,22 @@ transition: transform 0.3s ease;
   margin-top: 14px;
 }
 
-.home-contacto-texto p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #555;
-  max-width: 420px;
-}
-
-.home-contacto-form {
+.formulario-contacto {
   background: #fff;
   padding: 34px;
   border-radius: 18px;
   box-shadow: 0 10px 26px rgba(0,0,0,0.05);
+  max-width: none;
 }
 
-.home-contacto-form form {
+.formulario-contacto form {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-.home-contacto-form input,
-.home-contacto-form textarea {
+.formulario-contacto input,
+.formulario-contacto textarea {
   border: none;
   border-bottom: 1px solid #d7dce0;
   border-radius: 0;
@@ -871,12 +876,12 @@ transition: transform 0.3s ease;
   background: transparent;
 }
 
-.home-contacto-form input:focus,
-.home-contacto-form textarea:focus {
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
   border-color: #8ba085;
 }
 
-.home-contacto-btn {
+.boton-enviar {
   align-self: flex-start;
   margin-top: 10px;
   padding: 12px 24px;
@@ -888,26 +893,23 @@ transition: transform 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.home-contacto-btn:hover {
+.boton-enviar:hover {
   background: #8ba085;
   color: #fff;
   transform: translateY(-2px);
 }
 
-.layer-4 {
-  z-index: 4;
-}
-
 @media (max-width: 900px) {
-  .home-contacto {
+  .seccion-contacto {
     grid-template-columns: 1fr;
     padding: 60px 24px;
   }
 
-  .home-contacto-texto h2 {
+  .contacto-titulo .titulo-frontal {
     font-size: 2.3rem;
   }
 }
+
  /* REDES*/
 .home-redes {
   grid-column: 1 / -1;
