@@ -191,6 +191,7 @@
   <div class="home-contacto-form">
     <form action="https://formsubmit.co/info.neuslopez@gmail.com" method="POST">
       <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" id="refForm" name="_subject">
     <input type="text" name="_honey" style="display:none">
       <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_subject" value="Nuevo mensaje desde la web">
@@ -318,7 +319,11 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 elementosAnimados.forEach(el => observer.observe(el));
-  
+  //
+  //  Forms 
+    document.getElementById("refForm").value =
+"Nuevo formulario #" + Date.now();
+    
   });
 </script>
 
