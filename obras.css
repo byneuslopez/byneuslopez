@@ -807,3 +807,15 @@ img{
   height:100%;
   background:transparent;
 }
+
+.link-catalogo{
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: opacity .3s ease;
+}
+
+.link-catalogo:hover{
+  opacity:.6;
+}
